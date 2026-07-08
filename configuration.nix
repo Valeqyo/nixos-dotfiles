@@ -1,5 +1,11 @@
 { config, lib, pkgs, ... }:
 
+let
+  sddm-astronaut = (pkgs.sddm-astronaut.override {
+    embeddedTheme = "japanese_aesthetic";  # or any other theme
+  });
+
+in
 {
   imports =
     [
@@ -62,6 +68,11 @@
   services.displayManager.sddm = {
     enable = true;
     wayland.enable = true;
+    package = pkgs.kdePackages.sddm;
+    extraPackages = with pkgs; [
+      kdePackages.qtmultimedia
+    ];
+    theme = "sddm-astronaut-theme";
   };
 
   xdg.portal = {
@@ -141,12 +152,13 @@
 
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
-  environment.systemPackages = with pkgs; [
-    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    micro
-    wget
-    git
-    ghostty
+  environment.systemPackages = [
+    pkgs.neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    pkgs.micro
+    pkgs.wget
+    pkgs.git
+    pkgs.ghostty
+    sddm-astronaut
   ];
 
   fonts.packages = with pkgs; [
