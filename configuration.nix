@@ -25,6 +25,16 @@ in
     options = "--delete-older-than 7d";
   };
 
+  # FILE MANAGER
+  programs.thunar.enable = true;
+  programs.xfconf.enable = true;
+  services.gvfs.enable = true;
+  services.tumbler.enable = true;
+  programs.thunar.plugins = [
+  	pkgs.thunar-archive-plugin
+  	pkgs.thunar-volman
+  ];
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -159,6 +169,8 @@ in
     pkgs.git
     pkgs.ghostty
     sddm-astronaut
+    pkgs.file-roller
+    pkgs.p7zip
   ];
 
   fonts.packages = with pkgs; [

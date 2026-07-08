@@ -16,6 +16,7 @@ mod = "mod4"
 terminal = guess_terminal()
 
 keys = [
+    Key([mod], "e", lazy.spawn("thunar"), desc="Open file manager"),
     # A list of available commands that can be bound to keys can be found
     # at https://docs.qtile.org/en/latest/manual/config/lazy.html
     # Switch between windows
