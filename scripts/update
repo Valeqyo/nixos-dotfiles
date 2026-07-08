@@ -7,17 +7,17 @@ cd ~/nixos-dotfiles
 echo "Updating flake..."
 nix flake update
 
+if git diff --quiet flake.lock; then
+    echo "No flake updates available"
+    exit 0
+fi
+
 echo "Rebuilding NixOS..."
-sudo nixos-rebuild switch --flake ~/nixos-dotfiles#nixos-btw
+sudo nixos-rebuild switch --flake .#nixos-btw
 
 echo "Saving changes..."
 git add flake.lock
-
-if git diff --cached --quiet; then
-    echo "No flake changes to commit"
-else
-    git commit -m "Update flake"
-    git push
-fi
+git commit -m "Update flake"
+git push
 
 echo "Done!"
