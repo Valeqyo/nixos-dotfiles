@@ -2,7 +2,7 @@
 
 let
   sddm-astronaut = (pkgs.sddm-astronaut.override {
-    embeddedTheme = "japanese_aesthetic";  # or any other theme
+    embeddedTheme = "hyprland_kath";  # or any other theme
   });
 
 in
