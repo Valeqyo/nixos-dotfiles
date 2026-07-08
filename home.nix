@@ -33,12 +33,6 @@ in
       };
 
       init.defaultBranch = "main";
-
-      alias = {
-        ci = "commit";
-	co = "checkout";
-	s = "status";
-      };
     };
   };
 
