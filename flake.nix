@@ -10,6 +10,7 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    areofyl-fetch.url = "github:areofyl/fetch";
   };
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
     # NOTE: 'nixos' is the default hostname
@@ -20,10 +21,15 @@
         home-manager.nixosModules.home-manager
         {
           home-manager = {
-          useGlobalPkgs = true;
-          useUserPackages = true;
-          users.comar = import ./home.nix;
-          backupFileExtension = "backup";
+            useGlobalPkgs = true;
+            useUserPackages = true;
+            users.comar = {
+              imports = [
+                 inputs.areofyl-fetch.homeManagerModules.default
+                 ./home.nix
+              ];
+            };
+            backupFileExtension = "backup";
           };
         } 
       ];

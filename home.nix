@@ -37,6 +37,19 @@ in
     };
   };
 
+  programs.fetch = {
+    enable = true;
+    labelColor = "magenta";
+    info = [
+    	"os"
+    	"host"
+    	"kernel"
+    	"uptime"
+    ];
+    speed = 1.0;
+    spin = "xy";
+  };
+
   xdg.configFile = builtins.mapAttrs (name: subpath: {
     source = create_symlink "${dotfiles}/${subpath}";
     recursive = true;
