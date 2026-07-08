@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+
+set -e
+
+cd ~/nixos-dotfiles
+
+echo "Updating flake..."
+nix flake update
+
+echo "Rebuilding NixOS..."
+sudo nixos-rebuild switch --flake ~/nixos-dotfiles#nixos-btw
+
+echo "Saving changes..."
+git add flake.lock
+
+if git diff --cached --quiet; then
+    echo "No flake changes to commit"
+else
+    git commit -m "Update flake"
+    git push
+fi
+
+echo "Done!"
