@@ -1,23 +1,5 @@
 {
   "nodes": {
-    "areofyl-fetch": {
-      "inputs": {
-        "nixpkgs": "nixpkgs"
-      },
-      "locked": {
-        "lastModified": 1783093791,
-        "narHash": "sha256-Lc5ILBo60TgJIt7fJywVGzaWFmpBjJRvbU9fD3yCK+0=",
-        "owner": "areofyl",
-        "repo": "fetch",
-        "rev": "33b548f9effd838b6e0fad8d19596e45174ba92e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "areofyl",
-        "repo": "fetch",
-        "type": "github"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -41,22 +23,6 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1781577229,
-        "narHash": "sha256-lrp67w8AulE9Ks53n27I45ADSzbOCn4H+CNW1Ck8B+8=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "567a49d1913ce81ac6e9582e3553dd90a955875f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_2": {
-      "locked": {
         "lastModified": 1783389287,
         "narHash": "sha256-R5cxRkQCq5wIM91F9OkIEgu8YoSGjlMeTjYl9o4gpKw=",
         "rev": "0ad6f47ea4fe188f4bc8f0380f93ae8523337c6c",
@@ -71,9 +37,8 @@
     },
     "root": {
       "inputs": {
-        "areofyl-fetch": "areofyl-fetch",
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs"
       }
     }
   },

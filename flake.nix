@@ -10,7 +10,6 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    areofyl-fetch.url = "github:areofyl/fetch";
   };
   outputs = inputs@{ self, nixpkgs, home-manager, ... }: {
     # NOTE: 'nixos' is the default hostname
@@ -25,7 +24,6 @@
             useUserPackages = true;
             users.comar = {
               imports = [
-                 inputs.areofyl-fetch.homeManagerModules.default
                  ./home.nix
               ];
             };

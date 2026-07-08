@@ -9,7 +9,6 @@ let
     ghossty = "ghossty";
   };
 in
-
 {
   home.username = "comar";
   home.homeDirectory = "/home/comar";
@@ -35,19 +34,6 @@ in
 
       init.defaultBranch = "main";
     };
-  };
-
-  programs.fetch = {
-    enable = true;
-    labelColor = "magenta";
-    info = [
-    	"os"
-    	"host"
-    	"kernel"
-    	"uptime"
-    ];
-    speed = 1.0;
-    spin = "xy";
   };
 
   xdg.configFile = builtins.mapAttrs (name: subpath: {
