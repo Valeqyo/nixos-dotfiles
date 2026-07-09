@@ -14,6 +14,10 @@ in
   home.homeDirectory = "/home/comar";
   home.stateVersion = "26.05";
 
+  programs.firefox = {
+    enable = true;
+  };
+
   programs.bash = {
     enable = true;
     shellAliases = {
