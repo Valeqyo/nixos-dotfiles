@@ -8,6 +8,7 @@
     ./locale.nix
     ./packages.nix
     ./users.nix
+    ./optimisation.nix
   
     ./hardware
     ./desktop

@@ -7,26 +7,7 @@
       ./modules
     ];
 
-  nix.optimise = {
-    automatic = true;
-    dates = "weekly";
-  };
-
-  nix.gc = {
-    automatic = true;
-    dates = "daily";
-    options = "--delete-older-than 7d";
-  };
-
-  # FILE MANAGER
-  programs.thunar.enable = true;
-  programs.xfconf.enable = true;
-  services.gvfs.enable = true;
-  services.tumbler.enable = true;
-  programs.thunar.plugins = [
-  	pkgs.thunar-archive-plugin
-  	pkgs.thunar-volman
-  ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -34,45 +15,9 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-
-  # Enable sound.
-  # services.pulseaudio.enable = true;
-  # OR
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
-  services.pipewire.wireplumber.extraConfig.bluetoothEnhancements = {
-    "monitor.bluez.properties" = {
-      "bluez5.enable-sbc-xq" = true;
-      "bluez5.enable-msbc" = true;
-      "bluez5.enable-hw-volume" = true;
-      "bluez5.roles" = [ "hsp_hs" "hsp_ag" "hfp_hf" "hfp_ag" ];
-    };
-  };
-
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-    settings = {
-      General = {
-        Experimental = true;
-	FastConnectable = true;
-      };
-      Policy = {
-        AutoEnable = true;
-      };
-    };
-  };
  
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
