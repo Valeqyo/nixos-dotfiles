@@ -10,6 +10,7 @@ in
   imports =
     [
       ./hardware-configuration.nix
+      ./modules
     ];
 
   nixpkgs.config.allowUnfree = true;
@@ -53,18 +54,6 @@ in
     font = "Lat2-Terminus16";
     keyMap = "us";
   # useXkbConfig = true; # use xkb.options in tty.
-  };
-
-  # DRIVER NVIDIA
-  hardware.graphics.enable = true;
-  services.xserver.videoDrivers = ["nvidia"];
-  hardware.nvidia = {
-    modesetting.enable = true;
-    powerManagement.enable = false; # true
-    powerManagement.finegrained = false;
-    open = false;
-    nvidiaSettings = true; # Nvidia settings menu
-    package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
   };
 
   # Enable the X11 windowing system.
