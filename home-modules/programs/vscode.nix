@@ -15,4 +15,8 @@
       };
     };
   };
+
+  home.activation.removeOldVSCodeBackup = ''
+    rm -f ~/.config/Code/User/settings.json.backup
+  '';
 }
