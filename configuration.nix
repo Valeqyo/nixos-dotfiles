@@ -9,13 +9,18 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
+
+  services.sddmAstronaut = {
+    enable = true;
+    theme = "jake_the_dog";
+  };
+
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
 
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
- 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
 
