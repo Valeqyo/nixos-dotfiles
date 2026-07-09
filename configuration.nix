@@ -1,19 +1,11 @@
 { config, lib, pkgs, ... }:
 
-let
-  sddm-astronaut = (pkgs.sddm-astronaut.override {
-    embeddedTheme = "hyprland_kath";  # or any other theme
-  });
-
-in
 {
   imports =
     [
       ./hardware-configuration.nix
       ./modules
     ];
-
-  nixpkgs.config.allowUnfree = true;
 
   nix.optimise = {
     automatic = true;
@@ -35,62 +27,6 @@ in
   	pkgs.thunar-archive-plugin
   	pkgs.thunar-volman
   ];
-
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
-  networking.hostName = "nixos-btw"; # Define your hostname.
-
-  # Configure network connections interactively with nmcli or nmtui.
-  networking.networkmanager.enable = true;
-
-  # Set your time zone.
-  time.timeZone = "Europe/Rome";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-  console = {
-    font = "Lat2-Terminus16";
-    keyMap = "us";
-  # useXkbConfig = true; # use xkb.options in tty.
-  };
-
-  # Enable the X11 windowing system.
-  services.xserver = {
-    enable = true;
-    autoRepeatDelay = 200;
-    autoRepeatInterval = 35;
-    windowManager.qtile.enable = true;
-  };
-
-  services.displayManager.sddm = {
-    enable = true;
-    wayland.enable = true;
-    package = pkgs.kdePackages.sddm;
-    extraPackages = with pkgs; [
-      kdePackages.qtmultimedia
-    ];
-    theme = "sddm-astronaut-theme";
-  };
-
-  xdg.portal = {
-    enable = true;
-    config.common.defualt = "*";
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-wlr
-      xdg-desktop-portal-gtk
-    ];
-  };
-
-  environment.sessionVariables = {
-    WLR_NO_HARDWARE_CURSORS = 1;
-    NIXOS_OZONE_WL = 1;
-    MOZ_ENABLE_WAYLAND = 1;
-    GDK_BACKEND = "wayland,x11";
-    ELECTRON_OZONE_PLATFORM_HINT = "auto";
-    SDL_VIDEODRIVER = "wayland,x11";
-  };
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -135,34 +71,6 @@ in
  
   # Enable touchpad support (enabled default in most desktopManager).
   # services.libinput.enable = true;
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.comar = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      tree
-    ];
-  };
-
-  programs.firefox.enable = true;
-
-  # List packages installed in system profile.
-  # You can use https://search.nixos.org/ to find more packages (and options).
-  environment.systemPackages = [
-    pkgs.neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    pkgs.micro
-    pkgs.wget
-    pkgs.git
-    pkgs.ghostty
-    sddm-astronaut
-    pkgs.file-roller
-    pkgs.p7zip
-  ];
-
-  fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-  ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
