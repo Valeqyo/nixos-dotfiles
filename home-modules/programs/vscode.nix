@@ -3,8 +3,16 @@
 {
   programs.vscode = {
     enable = true;
-    extensions = with pkgs.vscode.profiles.default.extensions; [
-      #dracula-theme.theme-dracula
-    ];
+    
+
+    profiles.default = {
+      extensions = with pkgs.vscode-extensions; [
+         mvllow.rose-pine
+      ];
+      userSettings = {
+         "workbench.colorTheme": "Rosé Pine",
+         "workbench.iconTheme": "rose-pine-icons"
+      };
+    };
   };
 }
