@@ -10,8 +10,8 @@
          mvllow.rose-pine
       ];
       userSettings = {
-         "workbench.colorTheme": "Rosé Pine",
-         "workbench.iconTheme": "rose-pine-icons"
+         "workbench.colorTheme" = "Rosé Pine";
+         "workbench.iconTheme" = "rose-pine-icons";
       };
     };
   };
