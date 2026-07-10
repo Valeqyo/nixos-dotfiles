@@ -5,6 +5,7 @@ let
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
   configs = {
     hypr = "hypr";
+    uwsm = "uwsm";
     kitty = "kitty";
     "starship.toml" = "starship.toml";
     fish = "fish";
