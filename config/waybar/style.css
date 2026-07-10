@@ -35,9 +35,17 @@ window#waybar {
 #network,
 #cpu,
 #memory,
-#volume {
+#volume{
     border-radius: 0px;
     padding: 5px 8px;
+    background-color: @surface;
+    color: @text;
+    margin: 0px 5px 0px 0px;
+}
+
+#tray {
+    border-radius: 0px;
+    padding: 0px 8px;
     background-color: @surface;
     color: @text;
     margin: 0px 5px 0px 0px;

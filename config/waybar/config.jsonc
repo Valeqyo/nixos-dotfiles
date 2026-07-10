@@ -154,8 +154,8 @@
     "spacing": 10,
     "show-passive-items": true,
     "orders": {
-      "nm-applet": 10,
-      "blueman": 20,
+      "blueman": 99,
+      "nm-applet": 98,
       "discord": 30,
       "telegram-desktop": 40,
       "steam": 50
