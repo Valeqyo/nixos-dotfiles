@@ -10,7 +10,7 @@
     pkgs.micro
     pkgs.wget
     pkgs.git
-    pkgs.ghostty
+    pkgs.kitty
     pkgs.file-roller
     pkgs.p7zip
   ];

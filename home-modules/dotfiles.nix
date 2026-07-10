@@ -6,7 +6,8 @@ let
   configs = {
     qtile = "qtile";
     kanshi = "kanshi";
-    ghostty = "ghostty";
+    kitty = "kitty";
+    "starship.toml" = "starship.toml";
   };
 in
 {

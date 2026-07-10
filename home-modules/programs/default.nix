@@ -5,6 +5,7 @@
     ./shell.nix
     ./firefox.nix
     ./git.nix
-	./vscode.nix
+    ./vscode.nix
+    ./starship.nix
   ];
 }
