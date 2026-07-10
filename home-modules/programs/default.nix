@@ -7,5 +7,6 @@
     ./git.nix
     ./vscode.nix
     ./starship.nix
+    ./hyprland.nix
   ];
 }

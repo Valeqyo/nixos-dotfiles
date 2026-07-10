@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./qtile.nix
+    ./hyprland.nix
     ./sddm.nix
     ./xdg.nix
   ];
