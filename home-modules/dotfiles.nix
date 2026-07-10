@@ -8,6 +8,7 @@ let
     kanshi = "kanshi";
     kitty = "kitty";
     "starship.toml" = "starship.toml";
+    fish = "fish";
   };
 in
 {
