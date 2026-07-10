@@ -6,6 +6,10 @@
     starship
     awww
     rofi
+    btop
+    pavucontrol
+    playerctl
+    zscroll
   ];
 
   programs.bash.enable = true;

@@ -13,7 +13,8 @@
       publicShare = "${config.home.homeDirectory}/Public";
       templates = "${config.home.homeDirectory}/Templates";
       videos = "${config.home.homeDirectory}/Videos";
-
+	  projects = null;
+	  
       createDirectories = true;
     };
   };

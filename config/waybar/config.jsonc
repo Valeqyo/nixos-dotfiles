@@ -1,0 +1,164 @@
+{
+  "layer": "top",
+  "modules-left": [
+    "hyprland/workspaces",
+    "group/media"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "tray",
+    "group/volume",
+    //"bluetooth",
+    //"network",
+    "cpu",
+    "memory",
+    "battery"
+  ],
+  "hyprland/window": {
+    "max-length": 50
+  },
+  "battery": {
+    "interval": 60,
+    "format": "{capacity}% {icon}",
+    "format-icons": {
+      "default": [
+        "󰂎",
+        "󰁺",
+        "󰁻",
+        "󰁼",
+        "󰁽",
+        "󰁾",
+        "󰁿",
+        "󰂀",
+        "󰂁",
+        "󰂂",
+        "󰁹"
+      ],
+      "charging": [
+        "󰢟",
+        "󰢜",
+        "󰂆",
+        "󰂇",
+        "󰂈",
+        "󰢝",
+        "󰂉",
+        "󰢞",
+        "󰂊",
+        "󰂋",
+        "󰂅"
+      ]
+    }
+  },
+  "bluetooth": {
+    "format": " {status}",
+    "format-disabled": "", // an empty format will hide the module
+    "format-connected": " {num_connections}",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    "on-click": "exec kitty --title=blueman-manager -e blueman-manager "
+  },
+  "cpu": {
+    "interval": 10,
+    "format": " {}%",
+    "max-length": 10,
+    "on-click": "exec kitty --title=btop -e btop"
+  },
+  "memory": {
+    "interval": 30,
+    "format": " {used:0.1f}G/{total:0.1f}G",
+    "tooltip-format": "{percentage}% used",
+    "on-click": "exec kitty --title=btop -e btop"
+  },
+  "network": {
+    "format": "",
+    "format-wifi": "",
+    "format-ethernet": "",
+    "format-disconnected": "󰤭", //An empty format will hide the module.
+    "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+    "tooltip-format-ethernet": "{ifname} ",
+    "tooltip-format-disconnected": "󰖪",
+    "max-length": 50,
+    "on-click": "exec kitty --title=mntui -e nmtui"
+  },
+  "clock": {
+    "format": "󰥔 {:%a, %d. %b %I:%M %p}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "format": {
+        "today": "<span color='#c4a7e7'><b>{}</b></span>"
+      }
+    },
+    //"on-click": "exec firefox --app=https://calendar.google.com"
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-muted": "",
+    "format-icons": {
+      "default": [
+        "",
+        ""
+      ]
+    },
+    "ignored-sinks": [
+      "Easy Effects Sink"
+    ],
+    "on-click": "pavucontrol",
+    "on-click-right": "~/nixos-dotfiles/config/waybar/scripts/volume-control mute",
+    "on-scroll-up": "~/nixos-dotfiles/config/waybar/scripts/volume-control up",
+    "on-scroll-down": "~/nixos-dotfiles/config/waybar/scripts/volume-control down"
+  },
+  "pulseaudio/slider": {
+    "min": 0,
+    "max": 100,
+    "orientation": "horizontal"
+  },
+  "group/volume": {
+    "orientation": "horizontal",
+    "modules": [
+      "pulseaudio",
+      "pulseaudio/slider"
+    ]
+  },
+  "custom/media-now-playing": {
+    "exec": "~/nixos-dotfiles/config/waybar/scripts/media-now-playing.sh",
+    "escape": "true",
+    "tooltip": "false",
+    "on-click": "playerctl play-pause",
+    "on-click-middle": "playerctl previous",
+    "on-click-right": "playerctl next"
+  },
+  "custom/media-animation": {
+    "exec": "~/nixos-dotfiles/config/waybar/scripts/media-animation.sh",
+    "tooltip": "false"
+  },
+  "custom/media-time": {
+    "exec": "~/nixos-dotfiles/config/waybar/scripts/media-time.sh",
+    "escape": "true",
+    "tooltip": "false",
+    "interval": 1
+  },
+  "group/media": {
+    "orientation": "horizontal",
+    "modules": [
+      "custom/media-animation",
+      "custom/media-now-playing",
+      "custom/media-time"
+    ]
+  },
+  "tray": {
+    "icon-size": 21,
+    "spacing": 10,
+    "show-passive-items": true,
+    "orders": {
+      "nm-applet": 10,
+      "blueman": 20,
+      "discord": 30,
+      "telegram-desktop": 40,
+      "steam": 50
+    }
+  }
+}

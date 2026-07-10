@@ -4,8 +4,13 @@
   users.users.comar = {
     isNormalUser = true;
     shell = pkgs.fish;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
+
+  extraGroups = [
+    "wheel" # sudo
+    "networkmanager"
+  ];
+
+  packages = with pkgs; [
       tree
     ];
   };

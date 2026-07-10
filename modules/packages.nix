@@ -11,6 +11,7 @@
     pkgs.kitty
     pkgs.file-roller
     pkgs.p7zip
+    pkgs.networkmanagerapplet
   ];
 
   programs.fish.enable = true;

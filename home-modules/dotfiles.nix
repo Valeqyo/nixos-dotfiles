@@ -9,6 +9,7 @@ let
     kitty = "kitty";
     "starship.toml" = "starship.toml";
     fish = "fish";
+    waybar = "waybar";
   };
 in
 {

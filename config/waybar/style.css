@@ -1,0 +1,100 @@
+@import url("rose-pine.css");
+
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: JetBrainsMono Nerd Font Propo;
+    font-size: 12.5px;
+}
+
+window#waybar {
+    background-color: @base;
+    color: @text;
+}
+
+#workspaces button {
+    padding: 0px;
+    margin: 0px 0px 0px 5px; /*top right bottom left*/
+    background-color: transparent;
+    border-radius: 0px;
+    color: @subtle;
+}
+
+#workspaces button.active {
+    background-color: @iris;
+    color: @base;
+    font-weight: 700;
+}
+
+#workspaces button.urgent {
+    background-color: @love;
+    color: @base;
+}
+
+#battery,
+#bluetooth,
+#network,
+#cpu,
+#memory,
+#volume {
+    border-radius: 0px;
+    padding: 5px 8px;
+    background-color: @surface;
+    color: @text;
+    margin: 0px 5px 0px 0px;
+}
+
+#pulseaudio-slider {
+    padding: 0px;
+    margin: 0px;
+    margin-left: 8px;
+}
+
+#pulseaudio-slider slider {
+  all: unset;
+  min-height: 0;
+  min-width: 0;
+  opacity: 0;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+}
+
+#pulseaudio-slider trough {
+  min-height: 8px;
+  min-width: 75px;
+  border-radius: 0px;
+  background: @highlightMed;
+}
+
+#pulseaudio-slider highlight {
+  min-width: 10px;
+  border-radius: 0px;
+  background: @iris;
+}
+
+#media {
+  color: @rose;
+  margin: 0px 0px 0px 40px;
+}
+
+#custom-media-animation {
+  font-size: 13px;
+  margin-right: 10px;
+}
+
+#custom-media-now-playing {
+  margin-right: 10px;
+}
+
+#custom-media-time {
+  color: @rose;
+}
+
+tooltip {
+  background: @surface;
+  border-radius: 0px;
+}
+
+tooltip label {
+  color: @text;
+}
