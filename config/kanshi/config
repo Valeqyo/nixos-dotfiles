@@ -1,3 +1,0 @@
-profile default {
-    output HDMI-A-1 mode 1920x1080@59.94Hz scale 1.1
-}

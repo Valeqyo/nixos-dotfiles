@@ -4,8 +4,7 @@ let
   dotfiles = "${config.home.homeDirectory}/nixos-dotfiles/config";
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
   configs = {
-    qtile = "qtile";
-    kanshi = "kanshi";
+    hypr = "hypr";
     kitty = "kitty";
     "starship.toml" = "starship.toml";
     fish = "fish";
