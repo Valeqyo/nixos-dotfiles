@@ -30,6 +30,14 @@ window#waybar {
     color: @base;
 }
 
+#workspaces button:hover {
+    background: @highlightMed;
+    color: @iris;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
 #battery,
 #bluetooth,
 #network,
@@ -82,7 +90,7 @@ window#waybar {
 
 #media {
   color: @rose;
-  margin: 0px 0px 0px 40px;
+  margin: 0px 10px 0px 10px;
 }
 
 #custom-media-animation {

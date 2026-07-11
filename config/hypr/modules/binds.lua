@@ -1,6 +1,6 @@
 local terminal    = "kitty"
 local fileManager = "thunar"
-local menu        = "rofi -show drun"
+local menu        = "~/.config/rofi/type-3/launcher.sh"
 local browser     = "firefox"
 
 

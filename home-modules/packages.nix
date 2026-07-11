@@ -10,6 +10,7 @@
     pavucontrol
     playerctl
     zscroll
+    swaynotificationcenter
   ];
 
   programs.bash.enable = true;

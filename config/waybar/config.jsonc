@@ -16,8 +16,8 @@
     "memory",
     "battery"
   ],
-  "hyprland/window": {
-    "max-length": 50
+  "hyprland/workspaces": {
+    "on-click": "activate"
   },
   "battery": {
     "interval": 60,
@@ -107,9 +107,9 @@
       "Easy Effects Sink"
     ],
     "on-click": "pavucontrol",
-    "on-click-right": "~/nixos-dotfiles/config/waybar/scripts/volume-control mute",
-    "on-scroll-up": "~/nixos-dotfiles/config/waybar/scripts/volume-control up",
-    "on-scroll-down": "~/nixos-dotfiles/config/waybar/scripts/volume-control down"
+    "on-click-right": "~/.config/waybar/scripts/volume-control mute",
+    "on-scroll-up": "~/.config/waybar/scripts/volume-control up",
+    "on-scroll-down": "~/.config/waybar/scripts/volume-control down"
   },
   "pulseaudio/slider": {
     "min": 0,
@@ -124,7 +124,7 @@
     ]
   },
   "custom/media-now-playing": {
-    "exec": "~/nixos-dotfiles/config/waybar/scripts/media-now-playing.sh",
+    "exec": "~/.config/waybar/scripts/media-now-playing.sh",
     "escape": "true",
     "tooltip": "false",
     "on-click": "playerctl play-pause",
@@ -132,11 +132,11 @@
     "on-click-right": "playerctl next"
   },
   "custom/media-animation": {
-    "exec": "~/nixos-dotfiles/config/waybar/scripts/media-animation.sh",
+    "exec": "~/.config/waybar/scripts/media-animation.sh",
     "tooltip": "false"
   },
   "custom/media-time": {
-    "exec": "~/nixos-dotfiles/config/waybar/scripts/media-time.sh",
+    "exec": "~/.config/waybar/scripts/media-time.sh",
     "escape": "true",
     "tooltip": "false",
     "interval": 1

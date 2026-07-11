@@ -21,6 +21,13 @@ hl.window_rule({
     no_focus = true,
 })
 
+hl.layer_rule ({
+    name = "rofi-dropdown",
+    match = { namespace = "rofi" },
+    animation = "slide right",
+    dim_around = true,
+})
+
 -- Layer rules also return a handle.
 -- local overlayLayerRule = hl.layer_rule({
 --     name  = "no-anim-overlay",

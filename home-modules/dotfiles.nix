@@ -10,6 +10,7 @@ let
     "starship.toml" = "starship.toml";
     fish = "fish";
     waybar = "waybar";
+    rofi = "rofi";
   };
 in
 {
