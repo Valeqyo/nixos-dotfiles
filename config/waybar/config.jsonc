@@ -150,15 +150,12 @@
     ]
   },
   "tray": {
-    "icon-size": 21,
+    "icon-size": 15,
     "spacing": 10,
     "show-passive-items": true,
     "orders": {
-      "blueman": 99,
-      "nm-applet": 98,
-      "discord": 30,
-      "telegram-desktop": 40,
-      "steam": 50
+      "nm-applet": 99,
+      "blueman": 98
     }
   }
 }
