@@ -11,6 +11,7 @@
     playerctl
     zscroll
     swaynotificationcenter
+    libnotify
   ];
 
   programs.bash.enable = true;

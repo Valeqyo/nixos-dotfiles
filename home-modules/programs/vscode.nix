@@ -10,6 +10,7 @@
       userSettings = {
          "workbench.colorTheme" = "Rosé Pine";
          "workbench.iconTheme" = "rose-pine-icons";
+         "editor.fontFamily" = "'JetBrainsMono Nerd Font Propo', monospace";
       };
     };
   };

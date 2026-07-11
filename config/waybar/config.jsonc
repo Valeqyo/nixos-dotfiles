@@ -14,7 +14,8 @@
     //"network",
     "cpu",
     "memory",
-    "battery"
+    "battery",
+    "custom/notification"
   ],
   "hyprland/workspaces": {
     "on-click": "activate"
@@ -157,5 +158,24 @@
       "nm-applet": 99,
       "blueman": 98
     }
-  }
+  },
+  "custom/notification": {
+    "tooltip": true,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "escape": true
+  },
 }

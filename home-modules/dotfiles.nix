@@ -11,6 +11,7 @@ let
     fish = "fish";
     waybar = "waybar";
     rofi = "rofi";
+    swaync = "swaync";
   };
 in
 {
