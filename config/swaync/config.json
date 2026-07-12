@@ -76,7 +76,7 @@
                 },
                 {
                     "label": "",
-                    //"command": "$HOME/.config/swaync/scripts/nwg-look"
+                    "command": "$HOME/.config/swaync/scripts/nwg-look"
                 },
                 {
                     "label": "",

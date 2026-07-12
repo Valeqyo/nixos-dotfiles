@@ -6,5 +6,5 @@ end
 
 set -U fish_greeting
 
-alias up="git add ~/nixos-dotfiles && sudo nixos-rebuild switch --flake ~/nixos-dotfiles#nixos-btw"
+alias up="git -C ~/nixos-dotfiles add . && sudo nixos-rebuild switch --flake ~/nixos-dotfiles#nixos-btw"
 alias update="~/nixos-dotfiles/scripts/update"
