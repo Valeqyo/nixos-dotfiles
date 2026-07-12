@@ -3,6 +3,8 @@ local fileManager = "thunar"
 local menu        = "~/.config/rofi/type-3/launcher.sh"
 local browser     = "firefox"
 
+local clipboard   = "~/.config/rofi/clipboard/launcher.sh"
+
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
@@ -12,13 +14,18 @@ local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
 hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
-hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + T", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit")) 
 
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t"))
+hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("~/.config/rofi/powermenu/type-2/powermenu.sh"))
+
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
+
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | " .. clipboard .. " | cliphist decode | wl-copy"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))

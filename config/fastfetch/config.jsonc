@@ -1,0 +1,109 @@
+{
+  "logo": {
+    "type": "file",
+    "source": "~/.config/fastfetch/logo/nixos-slant.txt",
+    //"source": "NixOs_small",
+    "position": "left",
+    "padding": {
+      "top": 1,
+      "bottom": 0,
+      "left": 2,
+      "right": 2
+    },
+    "color": {
+      "1": "magenta"
+    }
+  },
+  "display": {
+    "separator": "  ",
+    "color": {
+      "keys": "white"
+    }
+  },
+  "modules": [
+    {
+      "type": "custom",
+      "format": "╭────────────────╮"
+    },
+    // {
+    //   "type": "title",
+    //   "key": "│ \u001b[38;5;183m\u001b[39m  user        │",
+    //   "format": "{1}"
+    // },
+    {
+      "type": "os",
+      "key": "│ \u001b[38;5;183m\u001b[39m  distro      │",
+      "format": "{4}-btw"
+    },
+    {
+      "type": "host",
+      "key": "│ \u001b[38;5;183m󰍹\u001b[39m  device      │",
+      "format": "{2}" // Mostra il modello del dispositivo (es. il modello del PC o della scheda madre)
+    },
+    // {
+    //   "type": "command",
+    //   "key": "│ \u001b[38;5;183m󰒍\u001b[39m  net-name    │",
+    //   "text": "hostname"
+    // },
+
+    {
+      "type": "kernel",
+      "key": "│ \u001b[38;5;183m\u001b[39m  kernel      │",
+      "format": "{2}"
+    },
+    {
+      "type": "gpu",
+      "key": "│ \u001b[38;5;183m󰢮\u001b[39m  gpu         │",
+      "hideType": "integrated",
+      "format": "{2}"
+    },
+    {
+      "type": "cpu",
+      "key": "│ \u001b[38;5;183m\u001b[39m  cpu         │",
+      "format": "{1}"
+    },
+    {
+      "type": "de",
+      "key": "│ \u001b[38;5;116m\u001b[39m  de          │",
+      "format": "{2}"
+    },
+    {
+      "type": "wm",
+      "key": "│ \u001b[38;5;116m\u001b[39m  wm          │",
+      "format": "{2} ({3})"
+    },
+    // {
+    //   "type": "shell",
+    //   "key": "│ \u001b[38;5;116m\u001b[39m  shell       │",
+    //   "format": "{1}"
+    // },
+    {
+      "type": "packages",
+      "key": "│ \u001b[38;5;116m\u001b[39m  pkgs        │",
+      "format": "{nix-system} system + {nix-user} user = {all}"
+    },
+    {
+      "type": "command",
+      "key": "│ \u001b[38;5;216m󰃭\u001b[39m  age         │",
+      "text": "born=$(stat -c %W /nix 2>/dev/null); if [ -z \"$born\" ] || [ \"$born\" -le 0 ]; then born=$(stat -c %Y /nix 2>/dev/null); fi; now=$(date +%s); diff=$((now-born)); echo \"$((diff/86400))d $((diff%86400/3600))h\""
+    },
+    {
+      "type": "uptime",
+      "key": "│ \u001b[38;5;216m\u001b[39m  uptime      │",
+      "format": "{2}h {3}m"
+    },
+    {
+      "type": "custom",
+      "format": "├────────────────┤"
+    },
+    {
+      "type": "colors",
+      "key": "│ \u001b[38;5;216m\u001b[39m  colors      │",
+      "symbol": "circle"
+    },
+    {
+      "type": "custom",
+      "format": "╰────────────────╯"
+    }
+  ]
+}

@@ -12,6 +12,8 @@ let
     waybar = "waybar";
     rofi = "rofi";
     swaync = "swaync";
+    fastfetch = "fastfetch";
+    cliphist = "cliphist";
   };
 in
 {

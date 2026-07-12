@@ -1,8 +1,8 @@
 {
   "layer": "top",
   "modules-left": [
-    "hyprland/workspaces",
-    "group/media"
+    "hyprland/workspaces"
+    //"group/media"
   ],
   "modules-center": [
     "clock"
@@ -154,6 +154,7 @@
     "icon-size": 15,
     "spacing": 10,
     "show-passive-items": true,
+    "reverse-direction": true,
     "orders": {
       "nm-applet": 99,
       "blueman": 98

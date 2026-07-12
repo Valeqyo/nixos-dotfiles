@@ -12,6 +12,15 @@
     zscroll
     swaynotificationcenter
     libnotify
+    nwg-look
+    rose-pine-gtk-theme
+    rose-pine-hyprcursor
+    rose-pine-cursor
+    rose-pine-icon-theme
+    cliphist
+    wl-clipboard
+    wl-clip-persist
+    spotify
   ];
 
   programs.bash.enable = true;

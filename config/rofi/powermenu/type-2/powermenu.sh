@@ -33,6 +33,7 @@ rofi_cmd() {
 		-p "Uptime: $uptime" \
 		-mesg "Uptime: $uptime" \
 		-theme ${dir}/${theme}.rasi
+	pkill rofi
 }
 
 # Confirmation CMD
@@ -71,15 +72,19 @@ run_cmd() {
 			amixer set Master mute
 			systemctl suspend
 		elif [[ $1 == '--logout' ]]; then
-			if [[ "$DESKTOP_SESSION" == 'openbox' ]]; then
-				openbox --exit
-			elif [[ "$DESKTOP_SESSION" == 'bspwm' ]]; then
-				bspc quit
-			elif [[ "$DESKTOP_SESSION" == 'i3' ]]; then
-				i3-msg exit
-			elif [[ "$DESKTOP_SESSION" == 'plasma' ]]; then
-				qdbus org.kde.ksmserver /KSMServer logout 0 0 0
-			fi
+            if [[ "$DESKTOP_SESSION" == 'hyprland' || "$GDMSESSION" == 'hyprland' ]]; then
+                pkill Hyprland
+            elif [[ "$DESKTOP_SESSION" == 'openbox' ]]; then
+                openbox --exit
+            elif [[ "$DESKTOP_SESSION" == 'bspwm' ]]; then
+                bspc quit
+            elif [[ "$DESKTOP_SESSION" == 'i3' ]]; then
+                i3-msg exit
+            elif [[ "$DESKTOP_SESSION" == 'plasma' ]]; then
+                qdbus org.kde.ksmserver /KSMServer logout 0 0 0
+            else
+                pkill Hyprland || pkill -KILL -u $USER
+            fi
 		fi
 	else
 		exit 0

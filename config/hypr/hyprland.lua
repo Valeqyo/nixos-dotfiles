@@ -1,3 +1,5 @@
+wallpaper = "~/Pictures/wallpapers/snow-night-moon.png"
+
 require("modules/monitors")
 require("modules/binds")
 require("modules/autostart")

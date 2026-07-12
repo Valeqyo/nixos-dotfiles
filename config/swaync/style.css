@@ -109,7 +109,7 @@
 .control-center {
 	background: @center-bg;
 	border-radius: var(--border-radius);
-	margin: 5px;
+	margin: 0px;
 	padding: 5px 5px 0 5px;
 }
 
