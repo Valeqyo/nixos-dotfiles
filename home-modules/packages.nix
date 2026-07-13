@@ -13,6 +13,7 @@
     swaynotificationcenter
     libnotify
     nwg-look
+    dracula-theme
     rose-pine-gtk-theme
     rose-pine-hyprcursor
     rose-pine-cursor
