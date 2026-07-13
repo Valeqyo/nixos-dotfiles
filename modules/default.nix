@@ -9,6 +9,7 @@
     ./packages.nix
     ./users.nix
     ./optimisation.nix
+    ./pam.nix
   
     ./hardware
     ./desktop
