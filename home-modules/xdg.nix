@@ -13,8 +13,12 @@
       publicShare = "${config.home.homeDirectory}/Public";
       templates = "${config.home.homeDirectory}/Templates";
       videos = "${config.home.homeDirectory}/Videos";
-	    projects = null;
+      projects = null;
 	  
+      extraConfig = {
+        XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/Pictures/screenshots";
+      };
+
       createDirectories = true;
     };
   };
