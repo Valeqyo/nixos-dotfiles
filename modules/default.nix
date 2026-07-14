@@ -8,7 +8,6 @@
     ./packages.nix
     ./users.nix
     ./optimisation.nix
-    ./pam.nix
     ./zram.nix
     ./printing.nix
     ./firewall.nix

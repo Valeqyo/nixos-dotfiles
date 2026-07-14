@@ -13,6 +13,7 @@
     pkgs.p7zip
     pkgs.networkmanagerapplet
     pkgs.brightnessctl
+    pkgs.gsettings-desktop-schemas
   ];
 
   programs.fish.enable = true;

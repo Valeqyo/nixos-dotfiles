@@ -2,8 +2,8 @@
 
 let
   sddm-astronaut = (pkgs.sddm-astronaut.override {
-    embeddedTheme = config.services.sddmAstronaut.theme;  # or any other theme
-  });
+  embeddedTheme = config.services.sddmAstronaut.theme;  # or any other theme
+});
 
 in
 {
@@ -21,7 +21,7 @@ in
 
   config = lib.mkIf config.services.sddmAstronaut.enable {
     services.displayManager.sddm = {
-      enable = true;
+    enable = true;
 	  wayland.enable = true;
 	  package = pkgs.kdePackages.sddm;
 	  extraPackages = with pkgs; [

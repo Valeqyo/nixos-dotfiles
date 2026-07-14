@@ -28,6 +28,7 @@
     grim # For screenshot
     slurp # For screenshot
     satty # For screenshot
+    seahorse # For keyring
     firefox
     spotify
   ];
