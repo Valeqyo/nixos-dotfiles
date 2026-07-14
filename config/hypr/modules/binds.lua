@@ -49,13 +49,6 @@ hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
 
 -- Laptop multimedia keys for volume and LCD brightness
--- hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("~/.config/waybar/scripts/volume-control up"), { locked = true, repeating = true })
--- hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("~/.config/waybar/scripts/volume-control down"), { locked = true, repeating = true })
--- hl.bind("XF86AudioMute",        hl.dsp.exec_cmd("~/.config/waybar/scripts/volume-control mute"), { locked = true, repeating = true })
--- hl.bind("XF86AudioMicMute",     hl.dsp.exec_cmd("~/.config/swaync/scripts/mictoggle"), { locked = true, repeating = true })
--- hl.bind("XF86MonBrightnessUp",  hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%+"), { locked = true, repeating = true })
--- hl.bind("XF86MonBrightnessDown",hl.dsp.exec_cmd("brightnessctl -e4 -n2 set 5%-"), { locked = true, repeating = true })
-
 hl.bind("XF86AudioRaiseVolume",  hl.dsp.exec_cmd("volumectl -u up"), { locked = true, repeating = true })
 hl.bind("XF86AudioLowerVolume",  hl.dsp.exec_cmd("volumectl -u down"), { locked = true, repeating = true })
 hl.bind("XF86AudioMute",         hl.dsp.exec_cmd("volumectl toggle-mute"), { locked = true, repeating = true })

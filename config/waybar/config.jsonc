@@ -108,9 +108,9 @@
       "Easy Effects Sink"
     ],
     "on-click": "pavucontrol",
-    "on-click-right": "~/.config/waybar/scripts/volume-control mute",
-    "on-scroll-up": "~/.config/waybar/scripts/volume-control up",
-    "on-scroll-down": "~/.config/waybar/scripts/volume-control down"
+    "on-click-right": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-scroll-up": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
   },
   "pulseaudio/slider": {
     "min": 0,
