@@ -14,4 +14,6 @@
     ELECTRON_OZONE_PLATFORM_HINT = "auto";
     SDL_VIDEODRIVER = "wayland,x11";
   };
+
+  security.polkit.enable = true;
 }

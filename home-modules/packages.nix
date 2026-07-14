@@ -25,6 +25,9 @@
     hyprlock
     waybar
     starship
+    grim # For screenshot
+    slurp # For screenshot
+    satty # For screenshot
     firefox
     spotify
   ];

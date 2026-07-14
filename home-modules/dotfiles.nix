@@ -14,6 +14,7 @@ let
     swaync = "swaync";
     fastfetch = "fastfetch";
     cliphist = "cliphist";
+    satty = "satty";
   };
 in
 {

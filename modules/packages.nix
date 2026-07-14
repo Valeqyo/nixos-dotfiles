@@ -12,6 +12,7 @@
     pkgs.file-roller
     pkgs.p7zip
     pkgs.networkmanagerapplet
+    pkgs.brightnessctl
   ];
 
   programs.fish.enable = true;

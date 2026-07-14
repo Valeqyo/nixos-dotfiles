@@ -1,0 +1,8 @@
+[general]
+fullscreen = false
+early-exit = true
+initial-tool = "pointer"
+copy-command = "wl-copy"
+output-filename = "~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png"
+save-after-copy = false
+default-hide-toolbars = false
