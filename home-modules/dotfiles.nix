@@ -16,6 +16,7 @@ let
     cliphist = "cliphist";
     satty = "satty";
     avizo = "avizo";
+    xfce4 = "xfce4";
   };
 in
 {
