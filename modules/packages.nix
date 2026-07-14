@@ -14,6 +14,7 @@
     pkgs.networkmanagerapplet
     pkgs.brightnessctl
     pkgs.gsettings-desktop-schemas
+    pkgs.glib   # <-- se mai mi servisse gsettings
   ];
 
   programs.fish.enable = true;
