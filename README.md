@@ -14,12 +14,12 @@ Everything — from the system-level setup to per-app configuration and the actu
 | User environment    | Home Manager (as a NixOS module)                      |
 | Compositor          | [Hyprland](https://hyprland.org/) (Wayland), configured in **Lua** |
 | Display manager     | SDDM + `sddm-astronaut` theme (`jake_the_dog`)         |
-| Shell               | fish (system default) / bash (with aliases, via Home Manager) |
+| Shell               | fish (system default)                                 |
 | Terminal            | kitty                                                  |
 | Bar                 | waybar                                                 |
 | App launcher         | rofi                                                   |
 | Notifications        | SwayNotificationCenter (swaync)                        |
-| Wallpaper daemon      | awww                                                   |
+| Wallpaper daemon      | awww (formerly swww)                                  |
 | Clipboard manager     | cliphist + wl-clipboard                               |
 | Prompt              | starship                                               |
 | Theme               | Rosé Pine (GTK, icons, cursor, waybar, rofi, swaync)   |
@@ -40,30 +40,35 @@ nixos-dotfiles/
 ├── flake.lock                  # Pinned input versions
 │
 ├── modules/                    # System-level NixOS modules
-│   ├── boot.nix                 # systemd-boot bootloader
-│   ├── networking.nix            # hostname, NetworkManager, wifi power-save off
-│   ├── locale.nix                # timezone (Europe/Rome), keyboard, locale
-│   ├── fonts.nix                 # Nerd Fonts, Geist
-│   ├── packages.nix              # global system packages (neovim, git, kitty, fish...)
-│   ├── users.nix                 # user account definition
-│   ├── optimisation.nix          # automatic nix store optimise + garbage collection
-│   ├── hardware/                 # nvidia.nix, audio.nix (pipewire), bluetooth.nix
-│   ├── desktop/                  # hyprland.nix, sddm.nix, xdg.nix
-│   └── programs/                 # thunar.nix (file manager + plugins)
+│   ├── default.nix               # Aggregates all system modules below
+│   ├── boot.nix                   # systemd-boot bootloader
+│   ├── locale.nix                 # timezone (Europe/Rome), keyboard, locale
+│   ├── fonts.nix                  # Nerd Fonts, Geist
+│   ├── packages.nix               # global system packages (neovim, git, kitty, fish...)
+│   ├── users.nix                  # user account definition
+│   ├── optimisation.nix           # automatic nix store optimise + garbage collection
+│   ├── pam.nix                    # PAM service for hyprlock
+│   ├── printing.nix               # CUPS + HP driver + SANE scanning + Avahi
+│   ├── firewall.nix               # firewall enable/rules
+│   ├── zram.nix                   # zram swap + systemd-oomd
+│   ├── hardware/                  # nvidia.nix, audio.nix (pipewire), bluetooth.nix, networking.nix
+│   ├── desktop/                   # hyprland.nix, sddm.nix, xdg.nix (portals)
+│   └── programs/                  # thunar.nix (file manager + plugins)
 │
 ├── home-modules/                # Home Manager modules (per-user)
+│   ├── default.nix                # Aggregates all home modules below
 │   ├── packages.nix               # user packages (rofi, waybar, starship, spotify, rose-pine theme...)
 │   ├── dotfiles.nix                # symlinks config/ into ~/.config via mkOutOfStoreSymlink
 │   ├── xdg.nix                     # XDG user directories
-│   └── programs/                   # shell.nix (aliases), git.nix, vscode.nix, hyprland.nix
+│   └── programs/                   # git.nix, vscode.nix, hyprland.nix (systemd off), polkit.nix (polkit-gnome agent)
 │
 ├── config/                      # Actual dotfiles, symlinked into ~/.config by home-modules/dotfiles.nix
-│   ├── hypr/                       # Hyprland config, written in Lua (modules/: binds, monitors, autostart, decoration, layouts, misc, input, windowrules)
+│   ├── hypr/                       # Hyprland config, written in Lua (modules/: binds, monitors, autostart, decoration, layouts, misc, input, windowrules) + hypridle.conf + hyprlock.conf
 │   ├── waybar/                     # Waybar config + Rosé Pine CSS + scripts (volume, media info)
 │   ├── rofi/                       # App launcher, clipboard menu, power menu (Rosé Pine styles)
 │   ├── swaync/                     # Notification center config + scripts (caffeine, mic toggle, power profile)
 │   ├── kitty/                      # Terminal config + theme
-│   ├── fish/                       # Fish shell config
+│   ├── fish/                       # Fish shell config (aliases: up, update, config, pkillhp)
 │   ├── fastfetch/                  # System info tool config + custom NixOS ASCII logos
 │   ├── cliphist/                   # Clipboard history config
 │   ├── uwsm/                       # Universal Wayland Session Manager env vars
@@ -101,7 +106,7 @@ nixos-dotfiles/
 4. Update the username/hostname to match your setup:
    - `flake.nix` → `nixosConfigurations.nixos-btw` and `home-manager.users.comar`
    - `modules/users.nix` → `users.users.comar`
-   - `modules/networking.nix` → `networking.hostName`
+   - `modules/hardware/networking.nix` → `networking.hostName`
    - `home.nix` → `home.username` / `home.homeDirectory`
 
 5. Rebuild the system (Home Manager is wired in as a NixOS module, so a single command applies both):
@@ -145,21 +150,26 @@ Hyprland is configured through a **Lua** config split into modules under `config
 | `SUPER + LMB / RMB drag`                           | Move / resize window                                                    |
 | Media & brightness keys                              | Volume, mic mute, brightness, playback (via waybar/swaync scripts + playerctl) |
 
+> No screenshot or direct lock-screen keybind is currently configured — see [Known gaps](#-known-gaps--possible-improvements).
+
 ---
 
 ## 🎨 Theme
 
 Rosé Pine is applied consistently across the desktop: GTK, icon theme, cursor theme, Hyprland decoration, waybar, rofi, and swaync all ship with matching Rosé Pine styles (see `config/waybar/rose-pine.css`, `config/rofi/type-3/colors/rose-pine.rasi`, `config/swaync/colors/colors.rose-pine.css`).
 
+Note: the `rose-pine-gtk-theme` / `rose-pine-icon-theme` / `rose-pine-cursor` packages are installed via Home Manager, but currently need to be **selected once manually with `nwg-look`** — they aren't wired up via `gtk.*` Home Manager options yet.
+
 ---
 
 ## 🔄 Keeping the system up to date
 
-A helper script and shell aliases (defined in `home-modules/programs/shell.nix`) simplify day-to-day usage:
+Shell aliases defined in `config/fish/config.fish` simplify day-to-day usage:
 
 ```bash
-up       # sudo nixos-rebuild switch --flake ~/nixos-dotfiles#nixos-btw
+up       # git -C ~/nixos-dotfiles add . && sudo nixos-rebuild switch --flake ~/nixos-dotfiles#nixos-btw
 update   # runs scripts/update: updates flake.lock, rebuilds, commits and pushes the update
+config   # cd ~/nixos-dotfiles/config
 ```
 
 `scripts/update` will:
@@ -167,6 +177,30 @@ update   # runs scripts/update: updates flake.lock, rebuilds, commits and pushes
 2. Skip the rebuild if `flake.lock` didn't change
 3. Rebuild the system with the new lockfile
 4. Commit and push the updated `flake.lock`
+
+---
+
+## 🧭 Known gaps / possible improvements
+
+Not yet implemented — kept here as a TODO list / reference for anyone reviewing this repo.
+
+**System (NixOS)**
+- `brightnessctl` and `qt6ct` are referenced (`binds.lua`, `hypridle.conf`, `QT_QPA_PLATFORMTHEME`) but never declared as packages.
+- No screenshot tool (`grim`/`slurp`, `hyprshot`, or `grimblast`) and no keybind for it.
+- `programs.dconf.enable` not set — needed for GTK app settings (used by `nwg-look`) to persist.
+- No secret service / keyring (e.g. `services.gnome.gnome-keyring`) for NetworkManager Wi-Fi passwords, browser and VS Code secrets.
+- `security.polkit.enable` not set explicitly (works implicitly today, but worth being explicit).
+- `services.fstrim.enable` not set (relevant if the root disk is an SSD).
+- Consider `boot.kernelParams = [ "nvidia_drm.fbdev=1" ]` for smoother direct scanout with the proprietary NVIDIA driver under Wayland.
+
+**Home Manager**
+- Rosé Pine GTK/icon/cursor packages are installed but not actually applied via `gtk.*` / `home.pointerCursor` — currently requires a manual one-time selection in `nwg-look`.
+- No `qt.enable` / `qt.platformTheme` counterpart to the `QT_QPA_PLATFORMTHEME=qt6ct` env var.
+
+**Hyprland**
+- No screenshot keybind.
+- No direct lock-screen keybind (e.g. `SUPER + L` → `hyprlock`); currently only reachable via the power menu.
+- `monitors.lua` hardcodes a single `HDMI-A-1` output with no fallback rule for other/unknown monitors (risk of a blank screen if the output changes).
 
 ---
 
