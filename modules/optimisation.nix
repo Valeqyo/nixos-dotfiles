@@ -11,4 +11,6 @@
     dates = "daily";
     options = "--delete-older-than 7d";
   };
+
+  services.fstrim.enable = true;
 }
