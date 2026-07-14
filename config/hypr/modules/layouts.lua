@@ -1,6 +1,6 @@
 hl.config({
     general = {
-        layout = "master",
+        layout = "dwindle",
     },
 })
 
@@ -8,6 +8,8 @@ hl.config({
 hl.config({
     dwindle = {
         preserve_split = true, -- You probably want this
+        smart_split = false,
+        force_split = 2, 
     },
 })
 

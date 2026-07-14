@@ -9,7 +9,7 @@ LOCATION=$(echo "$CITY,$COUNTRY" | sed 's/ /+/g')
 weather=$(curl -s "wttr.in/${LOCATION}?format=%c+%t" 2>/dev/null)
 
 if [ -z "$weather" ]; then
-    echo "Meteo non disponibile"
+    echo ""
 else
     echo "$weather  $CITY"
 fi
