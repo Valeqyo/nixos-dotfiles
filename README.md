@@ -6,6 +6,23 @@ Everything — from the system-level setup to per-app configuration and the actu
 
 ---
 
+## 🎬 Demo
+
+<!--
+TODO: aggiungere qui un video/GIF del setup in azione.
+
+Se carichi un video direttamente in un commento/issue/PR su GitHub, GitHub ti genera
+un link tipo quello sotto: incollalo qui e si vedrà come player embeddato nel README.
+
+https://github.com/user-attachments/assets/your-video-id-here
+
+In alternativa, per una GIF salvata nel repo (es. in una cartella assets/):
+
+![demo](./assets/demo.gif)
+-->
+
+---
+
 ## 🧩 Stack
 
 | Layer            | Choice                                              |
@@ -44,31 +61,32 @@ nixos-dotfiles/
 │   ├── boot.nix                   # systemd-boot bootloader
 │   ├── locale.nix                 # timezone (Europe/Rome), keyboard, locale
 │   ├── fonts.nix                  # Nerd Fonts, Geist
-│   ├── packages.nix               # global system packages (neovim, git, kitty, fish...)
+│   ├── packages.nix               # global system packages (neovim, git, kitty, brightnessctl...)
 │   ├── users.nix                  # user account definition
-│   ├── optimisation.nix           # automatic nix store optimise + garbage collection
-│   ├── pam.nix                    # PAM service for hyprlock
+│   ├── optimisation.nix           # nix store optimise/GC + fstrim
 │   ├── printing.nix               # CUPS + HP driver + SANE scanning + Avahi
 │   ├── firewall.nix               # firewall enable/rules
 │   ├── zram.nix                   # zram swap + systemd-oomd
 │   ├── hardware/                  # nvidia.nix, audio.nix (pipewire), bluetooth.nix, networking.nix
-│   ├── desktop/                   # hyprland.nix, sddm.nix, xdg.nix (portals)
+│   ├── desktop/                   # hyprland.nix (+ polkit/dconf/gnome-keyring/PAM), sddm.nix, xdg.nix (portals)
 │   └── programs/                  # thunar.nix (file manager + plugins)
 │
 ├── home-modules/                # Home Manager modules (per-user)
 │   ├── default.nix                # Aggregates all home modules below
-│   ├── packages.nix               # user packages (rofi, waybar, starship, spotify, rose-pine theme...)
+│   ├── packages.nix               # user packages (rofi, waybar, starship, avizo, satty, seahorse...)
 │   ├── dotfiles.nix                # symlinks config/ into ~/.config via mkOutOfStoreSymlink
 │   ├── xdg.nix                     # XDG user directories
 │   └── programs/                   # git.nix, vscode.nix, hyprland.nix (systemd off), polkit.nix (polkit-gnome agent)
 │
 ├── config/                      # Actual dotfiles, symlinked into ~/.config by home-modules/dotfiles.nix
 │   ├── hypr/                       # Hyprland config, written in Lua (modules/: binds, monitors, autostart, decoration, layouts, misc, input, windowrules) + hypridle.conf + hyprlock.conf
-│   ├── waybar/                     # Waybar config + Rosé Pine CSS + scripts (volume, media info)
+│   ├── waybar/                     # Waybar config + Rosé Pine CSS + scripts (media info)
 │   ├── rofi/                       # App launcher, clipboard menu, power menu (Rosé Pine styles)
 │   ├── swaync/                     # Notification center config + scripts (caffeine, mic toggle, power profile)
+│   ├── avizo/                      # OSD (volume/brightness) config, Rosé Pine colors
+│   ├── satty/                      # Screenshot annotation tool config
 │   ├── kitty/                      # Terminal config + theme
-│   ├── fish/                       # Fish shell config (aliases: up, update, config, pkillhp)
+│   ├── fish/                       # Fish shell config (aliases: up, update, config)
 │   ├── fastfetch/                  # System info tool config + custom NixOS ASCII logos
 │   ├── cliphist/                   # Clipboard history config
 │   ├── uwsm/                       # Universal Wayland Session Manager env vars
@@ -148,9 +166,16 @@ Hyprland is configured through a **Lua** config split into modules under `config
 | `SUPER + SHIFT + [0-9]`                        | Move window to workspace                                          |
 | `SUPER + scroll`                                 | Cycle workspaces                                                     |
 | `SUPER + LMB / RMB drag`                           | Move / resize window                                                    |
-| Media & brightness keys                              | Volume, mic mute, brightness, playback (via waybar/swaync scripts + playerctl) |
+| `SUPER + S`                                       | Screenshot (full screen) → satty                                      |
+| `SUPER + SHIFT + S`                                  | Screenshot (area select) → satty                                       |
+| Volume / mic / brightness keys                          | via [Avizo](#-osd-avizo) (`volumectl`, `lightctl`) — shows an OSD popup   |
+| Media keys                                                | via `playerctl`                                                             |
 
-> No screenshot or direct lock-screen keybind is currently configured — see [Known gaps](#-known-gaps--possible-improvements).
+---
+
+## 🔊 OSD (Avizo)
+
+Volume, mic mute, and brightness changes show an on-screen popup via [Avizo](https://github.com/heyjuvi/avizo), styled to match Rosé Pine (`config/avizo/config.ini`). Waybar's volume module (scroll/click on the bar) intentionally bypasses Avizo and talks to `wpctl` directly, so adjusting volume from the bar doesn't pop up the OSD — only physical media keys do.
 
 ---
 
@@ -180,27 +205,14 @@ config   # cd ~/nixos-dotfiles/config
 
 ---
 
-## 🧭 Known gaps / possible improvements
+## 🧭 Design notes / deliberate choices
 
-Not yet implemented — kept here as a TODO list / reference for anyone reviewing this repo.
+A few things that might look like gaps at first glance are actually intentional:
 
-**System (NixOS)**
-- `brightnessctl` and `qt6ct` are referenced (`binds.lua`, `hypridle.conf`, `QT_QPA_PLATFORMTHEME`) but never declared as packages.
-- No screenshot tool (`grim`/`slurp`, `hyprshot`, or `grimblast`) and no keybind for it.
-- `programs.dconf.enable` not set — needed for GTK app settings (used by `nwg-look`) to persist.
-- No secret service / keyring (e.g. `services.gnome.gnome-keyring`) for NetworkManager Wi-Fi passwords, browser and VS Code secrets.
-- `security.polkit.enable` not set explicitly (works implicitly today, but worth being explicit).
-- `services.fstrim.enable` not set (relevant if the root disk is an SSD).
-- Consider `boot.kernelParams = [ "nvidia_drm.fbdev=1" ]` for smoother direct scanout with the proprietary NVIDIA driver under Wayland.
+- **`qt6ct` is not installed.** `config/uwsm/env` still exports `QT_QPA_PLATFORMTHEME=qt6ct` for the day a Qt app shows up, but the package is deliberately not installed since no Qt applications are currently used.
+- **`hyprlock` has no direct keybind on purpose.** It's reachable only through the power menu (`SUPER + SHIFT + N`), by design — not an oversight.
 
-**Home Manager**
-- Rosé Pine GTK/icon/cursor packages are installed but not actually applied via `gtk.*` / `home.pointerCursor` — currently requires a manual one-time selection in `nwg-look`.
-- No `qt.enable` / `qt.platformTheme` counterpart to the `QT_QPA_PLATFORMTHEME=qt6ct` env var.
-
-**Hyprland**
-- No screenshot keybind.
-- No direct lock-screen keybind (e.g. `SUPER + L` → `hyprlock`); currently only reachable via the power menu.
-- `monitors.lua` hardcodes a single `HDMI-A-1` output with no fallback rule for other/unknown monitors (risk of a blank screen if the output changes).
+`glib` (which provides the `gsettings` CLI, used by tools like `nwg-look` to persist GTK theme choices) is installed alongside `gsettings-desktop-schemas` in `modules/packages.nix`, even though it isn't actively used day-to-day — kept as basic desktop infrastructure rather than a per-app preference.
 
 ---
 
@@ -208,6 +220,7 @@ Not yet implemented — kept here as a TODO list / reference for anyone reviewin
 
 - `home-manager` is wired directly into `flake.nix` as a NixOS module, so there's no separate `home-manager switch` step — `nixos-rebuild switch` handles both system and user configuration.
 - Dotfiles in `config/` are not copied but **symlinked** into `~/.config` via `home-modules/dotfiles.nix`, using `mkOutOfStoreSymlink`. This means you can edit files in `~/nixos-dotfiles/config` directly and see changes without rebuilding.
+- Comments throughout the config are written in a mix of **English and Italian** — don't be surprised if you run into both in the same file.
 - No license is currently specified in this repository.
 
 ---
