@@ -15,6 +15,7 @@ let
     fastfetch = "fastfetch";
     cliphist = "cliphist";
     satty = "satty";
+    avizo = "avizo";
   };
 in
 {

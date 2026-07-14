@@ -29,6 +29,7 @@
     slurp # For screenshot
     satty # For screenshot
     seahorse # For keyring
+    avizo # multimedia keys
     firefox
     spotify
   ];
