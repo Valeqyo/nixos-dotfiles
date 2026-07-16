@@ -7,7 +7,7 @@
   <property name="last-window-height" type="int" value="948"/>
   <property name="last-window-maximized" type="bool" value="true"/>
   <property name="last-details-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_38_PERCENT"/>
-  <property name="last-details-view-column-widths" type="string" value="50,50,146,50,50,105,50,50,231,50,50,81,50,156"/>
+  <property name="last-details-view-column-widths" type="string" value="50,50,131,50,50,92,50,50,310,50,50,62,50,145"/>
   <property name="last-separator-position" type="int" value="140"/>
   <property name="last-show-hidden" type="bool" value="false"/>
   <property name="hidden-bookmarks" type="array">
@@ -17,6 +17,8 @@
   <property name="last-statusbar-visible" type="bool" value="true"/>
   <property name="last-menubar-visible" type="bool" value="false"/>
   <property name="hidden-devices" type="array">
+    <value type="string" value="5A9A48D29A48ABF7"/>
     <value type="string" value="fb79af8c-9799-418c-8ce2-2d11fe95ca1c"/>
+    <value type="string" value="14B8FDF8B8FDD866"/>
   </property>
 </channel>

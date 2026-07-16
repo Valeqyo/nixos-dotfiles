@@ -14,28 +14,4 @@
     fsType = "exfat";
     options = [ "users" "nofail" "x-gvfs-show" "uid=1000" ];
   };
-
-  fileSystems."/mnt/sda2" = {
-    device = "/dev/disk/by-uuid/5A9A48D29A48ABF7";
-    fsType = "ntfs";
-    options = [
-      "users"
-      "nofail"
-      "noauto"
-      "x-gvfs-show"
-      "uid=1000"
-    ];
-  };
-
-  fileSystems."/mnt/HDD_Windows" = {
-    device = "/dev/disk/by-uuid/14B8FDF8B8FDD866";
-    fsType = "ntfs";
-    options = [
-      "users"
-      "nofail"
-      "noauto"
-      "x-gvfs-show"
-      "uid=1000"
-    ];
-  };
 }
