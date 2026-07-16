@@ -16,6 +16,7 @@
     "cpu",
     "memory",
     "battery",
+    "disk",
     "custom/notification"
   ],
   "hyprland/workspaces": {
@@ -185,5 +186,13 @@
     "return-type": "json",
     "interval": 0,
     "escape": true
-  }
+  },
+  "disk": {
+    "interval": 30,
+    "path": "/",
+    "format": " {percentage_free}%",
+    "unit": "GB",
+    "tooltip": true,
+    "tooltip-format": "Used: {specific_used:.1f} GB/{specific_total:.1f} GB\nFree: {specific_free:.1f} GB"
+  },
 }

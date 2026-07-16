@@ -45,7 +45,8 @@ window#waybar {
 #cpu,
 #memory,
 #volume,
-#custom-notification {
+#custom-notification,
+#disk {
   border-radius: 0px;
   padding: 5px 8px;
   background-color: @surface;
