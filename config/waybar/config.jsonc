@@ -8,6 +8,7 @@
     "clock"
   ],
   "modules-right": [
+    "custom/capslock",
     "tray",
     "group/volume",
     //"bluetooth",
@@ -179,4 +180,10 @@
     "on-click": "swaync-client -t -sw",
     "escape": true
   },
+  "custom/capslock": {
+    "exec": "~/.config/waybar/scripts/capslock.sh",
+    "return-type": "json",
+    "interval": 0,
+    "escape": true
+  }
 }

@@ -1,41 +1,42 @@
 @import url("rose-pine.css");
 
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: JetBrainsMono Nerd Font Propo;
-    font-size: 12.5px;
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: JetBrainsMono Nerd Font Propo;
+  font-size: 12.5px;
 }
 
 window#waybar {
-    background-color: @base;
-    color: @text;
+  background-color: @base;
+  color: @text;
 }
 
 #workspaces button {
-    padding: 0px;
-    margin: 0px 0px 0px 5px; /*top right bottom left*/
-    background-color: transparent;
-    border-radius: 0px;
-    color: @subtle;
+  padding: 0px;
+  margin: 0px 0px 0px 5px;
+  /*top right bottom left*/
+  background-color: transparent;
+  border-radius: 0px;
+  color: @subtle;
 }
 
 #workspaces button.active {
-    background-color: @iris;
-    color: @base;
-    font-weight: 700;
+  background-color: @iris;
+  color: @base;
+  font-weight: 700;
 }
 
 #workspaces button.urgent {
-    background-color: @love;
-    color: @base;
+  background-color: @love;
+  color: @base;
 }
 
 #workspaces button:hover {
-    background: @highlightMed;
-    color: @iris;
-    border: none;
-    outline: none;
-    box-shadow: none;
+  background: @highlightMed;
+  color: @iris;
+  border: none;
+  outline: none;
+  box-shadow: none;
 }
 
 #battery,
@@ -45,25 +46,33 @@ window#waybar {
 #memory,
 #volume,
 #custom-notification {
-    border-radius: 0px;
-    padding: 5px 8px;
-    background-color: @surface;
-    color: @text;
-    margin: 0px 5px 0px 0px;
+  border-radius: 0px;
+  padding: 5px 8px;
+  background-color: @surface;
+  color: @text;
+  margin: 0px 5px 0px 0px;
+}
+
+#custom-capslock {
+  border-radius: 0px;
+  padding: 5px 8px;
+  background-color: @surface;
+  color: @love;
+  margin: 0px 5px 0px 0px;
 }
 
 #tray {
-    border-radius: 0px;
-    padding: 0px 8px;
-    background-color: @surface;
-    color: @text;
-    margin: 0px 5px 0px 0px;
+  border-radius: 0px;
+  padding: 0px 8px;
+  background-color: @surface;
+  color: @text;
+  margin: 0px 5px 0px 0px;
 }
 
 #pulseaudio-slider {
-    padding: 0px;
-    margin: 0px;
-    margin-left: 8px;
+  padding: 0px;
+  margin: 0px;
+  margin-left: 8px;
 }
 
 #pulseaudio-slider slider {
