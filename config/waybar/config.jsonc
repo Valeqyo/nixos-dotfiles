@@ -2,7 +2,6 @@
   "layer": "top",
   "modules-left": [
     "hyprland/workspaces"
-    //"group/media"
   ],
   "modules-center": [
     "clock"
@@ -124,32 +123,6 @@
     "modules": [
       "pulseaudio",
       "pulseaudio/slider"
-    ]
-  },
-  "custom/media-now-playing": {
-    "exec": "~/.config/waybar/scripts/media-now-playing.sh",
-    "escape": "true",
-    "tooltip": "false",
-    "on-click": "playerctl play-pause",
-    "on-click-middle": "playerctl previous",
-    "on-click-right": "playerctl next"
-  },
-  "custom/media-animation": {
-    "exec": "~/.config/waybar/scripts/media-animation.sh",
-    "tooltip": "false"
-  },
-  "custom/media-time": {
-    "exec": "~/.config/waybar/scripts/media-time.sh",
-    "escape": "true",
-    "tooltip": "false",
-    "interval": 1
-  },
-  "group/media": {
-    "orientation": "horizontal",
-    "modules": [
-      "custom/media-animation",
-      "custom/media-now-playing",
-      "custom/media-time"
     ]
   },
   "tray": {

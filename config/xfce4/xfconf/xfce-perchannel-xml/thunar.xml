@@ -8,7 +8,7 @@
   <property name="last-window-maximized" type="bool" value="true"/>
   <property name="last-details-view-zoom-level" type="string" value="THUNAR_ZOOM_LEVEL_38_PERCENT"/>
   <property name="last-details-view-column-widths" type="string" value="50,50,131,50,50,92,50,50,310,50,50,62,50,145"/>
-  <property name="last-separator-position" type="int" value="140"/>
+  <property name="last-separator-position" type="int" value="172"/>
   <property name="last-show-hidden" type="bool" value="false"/>
   <property name="hidden-bookmarks" type="array">
     <value type="string" value="recent:///"/>
@@ -21,4 +21,5 @@
     <value type="string" value="fb79af8c-9799-418c-8ce2-2d11fe95ca1c"/>
     <value type="string" value="14B8FDF8B8FDD866"/>
   </property>
+  <property name="last-side-pane" type="string" value="THUNAR_SIDEPANE_TYPE_SHORTCUTS"/>
 </channel>

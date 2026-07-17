@@ -99,24 +99,6 @@ window#waybar {
   background: @iris;
 }
 
-#media {
-  color: @rose;
-  margin: 0px 10px 0px 10px;
-}
-
-#custom-media-animation {
-  font-size: 13px;
-  margin-right: 10px;
-}
-
-#custom-media-now-playing {
-  margin-right: 10px;
-}
-
-#custom-media-time {
-  color: @rose;
-}
-
 tooltip {
   background: @surface;
   border-radius: 0px;

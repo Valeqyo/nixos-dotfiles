@@ -1,8 +1,10 @@
 local terminal    = "kitty"
 local fileManager = "thunar"
-local menu        = "~/.config/rofi/type-3/launcher.sh"
 local browser     = "firefox"
+local menu        = "~/.config/rofi/type-3/launcher.sh"
 local clipboard   = "~/.config/rofi/clipboard/launcher.sh"
+local screenshot   = "~/.config/rofi/screenshot/screenshot.sh"
+
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
@@ -22,7 +24,7 @@ hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("~/.config/rofi/powermenu/typ
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | " .. clipboard .. " | cliphist decode | wl-copy"))
 
-hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("grim - | satty -f -"))
+hl.bind(mainMod .. " + S", hl.dsp.exec_cmd(screenshot))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("grim -g \"$(slurp)\" - | satty -f -"))
 
 -- Move focus with mainMod + arrow keys

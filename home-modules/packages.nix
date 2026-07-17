@@ -9,7 +9,6 @@
     btop
     pavucontrol
     playerctl
-    zscroll
     swaynotificationcenter
     libnotify
     nwg-look
@@ -26,10 +25,11 @@
     waybar
     starship
     grim # For screenshot
-    slurp # For screenshot
-    satty # For screenshot
+    slurp # For screenshot (selettore)
+    satty # For screenshot (modificatore)
+    wf-recorder # For recording
     seahorse # For keyring
-    avizo # multimedia keys
+    avizo # multimedia keys (OSD)
 
     firefox
     spotify
