@@ -13,4 +13,6 @@
   };
 
   services.fstrim.enable = true;
+
+  programs.gamemode.enable = true; #gamemoderun ./game
 }

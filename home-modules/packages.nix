@@ -30,11 +30,11 @@
     satty # For screenshot
     seahorse # For keyring
     avizo # multimedia keys
+
     firefox
     spotify
   ];
 
-  programs.bash.enable = true;
   programs.vscode.enable = true;
   programs.git.enable = true;
 }

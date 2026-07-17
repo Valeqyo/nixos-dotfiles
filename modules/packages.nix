@@ -17,6 +17,6 @@
     pkgs.glib   # <-- se mai mi servisse gsettings
   ];
 
-  programs.fish.enable = true;
+  programs.fish.enable = true; # Lascialo per forza
   programs.thunar.enable = true;
 }
