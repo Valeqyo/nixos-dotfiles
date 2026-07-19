@@ -9,7 +9,7 @@
     pkgs.wget
     pkgs.git
     pkgs.kitty
-    pkgs.file-roller
+    pkgs.xarchiver
     pkgs.p7zip
     pkgs.networkmanagerapplet
     pkgs.brightnessctl
@@ -19,4 +19,5 @@
 
   programs.fish.enable = true; # Lascialo per forza
   programs.thunar.enable = true;
+  programs.steam.enable = true;
 }

@@ -33,8 +33,16 @@
 
     firefox
     spotify
+    onlyoffice-desktopeditors
+    mousepad # text-editor
+    mpv # media player
+    ristretto # image viewer
+    atril # pdf viewer
+    gnome-disk-utility
+    ferdium
+    prismlauncher # minecraft java
+    heroic
   ];
 
   programs.vscode.enable = true;
-  programs.git.enable = true;
 }

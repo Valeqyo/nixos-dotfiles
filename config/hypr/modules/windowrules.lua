@@ -1,13 +1,14 @@
+-- ======================================================
+-- SYSTEM / QUIRKS
+-- ======================================================
+
 hl.window_rule({
-    -- Ignore maximize requests from all apps. You'll probably like this.
     name  = "suppress-maximize-events",
     match = { class = ".*" },
-
     suppress_event = "maximize",
 })
 
 hl.window_rule({
-    -- Fix some dragging issues with XWayland
     name  = "fix-xwayland-drags",
     match = {
         class      = "^$",
@@ -17,18 +18,174 @@ hl.window_rule({
         fullscreen = false,
         pin        = false,
     },
-
     no_focus = true,
 })
 
-hl.layer_rule ({
+-- ======================================================
+-- UTILITY POPUPS -> sempre flottanti, centrati
+-- ======================================================
+
+hl.window_rule({
+    name  = "float-btop",
+    match = { class = "kitty", title = "btop" },
+    float = true,
+    size  = "900 600",
+    center = true,
+})
+
+hl.window_rule({
+    name  = "float-nmtui",
+    match = { class = "kitty", title = "nmtui" },
+    float = true,
+    size  = "800 500",
+    center = true,
+})
+
+hl.window_rule({
+    name  = "float-blueman",
+    match = { class = ".blueman-manager-wrapped" },
+    float = true,
+    size  = "800 500",
+    center = true,
+})
+
+hl.window_rule({
+    name  = "float-pavucontrol",
+    match = { class = "org.pulseaudio.pavucontrol" },
+    float = true,
+    size  = "800 600",
+    center = true,
+})
+
+hl.window_rule({
+    name  = "float-satty",
+    match = { class = "com.gabm.satty" },
+    float = true,
+    size  = "800 600",
+    center = true,
+})
+
+hl.window_rule({
+    name  = "float-ristretto",
+    match = { class = "org.xfce.ristretto" },
+    float = true,
+    size  = "1000 700",
+    center = true,
+})
+
+-- hl.window_rule({
+--     name  = "float-disks",
+--     match = { class = "gnome-disks" },
+--     float = true,
+--     size  = "900 600",
+--     center = true,
+-- })
+
+-- hl.window_rule({
+--     name  = "float-atril",
+--     match = { class = "atril" },
+--     float = true,
+--     size  = "1000 750",
+--     center = true,
+-- })
+
+-- ======================================================
+-- WORKSPACE: 1 BROWSER
+-- ======================================================
+
+hl.window_rule({
+    name  = "ws-browser-firefox",
+    match = { class = "firefox" },
+    workspace = "1",
+})
+
+-- ======================================================
+-- WORKSPACE: 3 DEV
+-- ======================================================
+
+hl.window_rule({
+    name  = "ws-dev-vscode",
+    match = { class = "code" },
+    workspace = "3",
+})
+
+-- ======================================================
+-- WORKSPACE: 4 OFFICE
+-- ======================================================
+
+hl.window_rule({
+    name  = "ws-office",
+    match = { class = "ONLYOFFICE" },
+    workspace = "4",
+})
+
+-- ======================================================
+-- WORKSPACE: 5 COMMUNICATION
+-- ======================================================
+
+hl.window_rule({
+    name  = "ws-ferdium",
+    match = { class = "ferdium" },
+    workspace = "5 silent",
+})
+
+-- ======================================================
+-- WORKSPACE: 6 GAMING (futuro: Steam, Minecraft)
+-- ======================================================
+
+hl.window_rule({
+    name  = "ws-gaming-steam",
+    match = { class = "steam" },
+    workspace = "6 silent",
+})
+
+-- hl.window_rule({
+--     name  = "ws-gaming-minecraft",
+--     match = { class = "^Minecraft.*" },
+--     workspace = "6 silent",
+-- })
+
+-- hl.window_rule({
+--     name  = "no-blur-gaming",
+--     match = { class = "steam", fullscreen = true },
+--     no_blur = true,
+-- })
+
+-- ======================================================
+-- WORKSPACE: 9 MEDIA
+-- ======================================================
+
+hl.window_rule({
+    name  = "ws-media-spotify",
+    match = { class = "Spotify" },
+    workspace = "9",
+})
+
+-- ======================================================
+-- FIREFOX PICTURE-IN-PICTURE
+-- ======================================================
+
+hl.window_rule({
+    name  = "firefox-pip",
+    match = { title = "Picture-in-Picture" },
+    float = true,
+    pin   = true,
+    size  = "350 200",
+    move  = "1920-675 1080-385",
+})
+
+-- ======================================================
+-- LAYER RULES
+-- ======================================================
+
+hl.layer_rule({
     name = "rofi",
     match = { namespace = "rofi" },
     animation = "slide right",
     dim_around = true,
 })
 
-hl.layer_rule ({
+hl.layer_rule({
     name = "notification",
     match = { namespace = "swaync-control-center" },
     animation = "slide right",
