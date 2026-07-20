@@ -17,7 +17,12 @@ window#waybar {
   /*top right bottom left*/
   background-color: transparent;
   border-radius: 0px;
+  color: @text;
+}
+
+#workspaces button.empty {
   color: @subtle;
+  opacity: 0.5;
 }
 
 #workspaces button.active {

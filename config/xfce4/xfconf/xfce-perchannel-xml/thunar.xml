@@ -22,4 +22,6 @@
     <value type="string" value="14B8FDF8B8FDD866"/>
   </property>
   <property name="last-side-pane" type="string" value="THUNAR_SIDEPANE_TYPE_SHORTCUTS"/>
+  <property name="last-renamer-dialog-maximized" type="bool" value="true"/>
+  <property name="misc-single-click" type="bool" value="false"/>
 </channel>

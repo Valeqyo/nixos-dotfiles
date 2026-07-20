@@ -155,6 +155,12 @@ hl.window_rule({
     workspace = "6",
 })
 
+hl.window_rule({
+    name  = "ws-gaming-heroic",
+    match = { class = "heroic" },
+    workspace = "6",
+})
+
 -- hl.window_rule({
 --     name  = "ws-gaming-minecraft",
 --     match = { class = "^Minecraft.*" },

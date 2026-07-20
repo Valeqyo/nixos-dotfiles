@@ -19,7 +19,17 @@
     "custom/notification"
   ],
   "hyprland/workspaces": {
-    "on-click": "activate"
+    "on-click": "activate",
+	"format": "{icon}",
+    "format-icons": {
+        "1": "󰈹",
+        "3": "󰅩",
+        "4": "󰈙",
+        "5": "󰭹",
+        "6": "󰊴",
+        "9": "󰝚",
+        "default": "󰇘"
+    },
   },
   "battery": {
     "interval": 60,

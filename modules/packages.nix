@@ -9,7 +9,6 @@
     pkgs.wget
     pkgs.git
     pkgs.kitty
-    pkgs.xarchiver
     pkgs.p7zip
     pkgs.networkmanagerapplet
     pkgs.brightnessctl

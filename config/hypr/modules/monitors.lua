@@ -11,10 +11,16 @@ hl.monitor({
     scale    = "1",
 })
 
---for i = 1, 5 do
---    hl.workspace_rule({
---        workspace = tostring(i),
---        monitor = "HDMI-A-1",
---        persistent = true
---    })
---end
+for i = 1, 6 do
+   hl.workspace_rule({
+       workspace = tostring(i),
+       monitor = "HDMI-A-1",
+       persistent = true
+   })
+end
+
+hl.workspace_rule({
+    workspace = "9",
+    monitor = "HDMI-A-1",
+    persistent = true
+})

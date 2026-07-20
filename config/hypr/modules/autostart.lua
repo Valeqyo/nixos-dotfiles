@@ -1,4 +1,6 @@
 hl.on("hyprland.start", function () 
+	hl.exec_cmd("ferdium")
+
     hl.exec_cmd("blueman-applet")
     hl.exec_cmd("nm-applet")
     hl.exec_cmd("waybar")
@@ -10,6 +12,4 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("wl-clip-persist --clipboard regular")
     hl.exec_cmd("uwsm app -- hypridle")
     hl.exec_cmd("avizo-service")
-
-    hl.exec_cmd("ferdium")
 end)

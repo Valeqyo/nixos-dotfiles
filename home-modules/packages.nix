@@ -30,6 +30,7 @@
     wf-recorder # For recording
     seahorse # For keyring
     avizo # multimedia keys (OSD)
+    engrampa #alternativa a xarchive
 
     firefox
     spotify
