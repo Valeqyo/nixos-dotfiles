@@ -89,6 +89,22 @@ hl.window_rule({
 --     center = true,
 -- })
 
+-- Tutte le finestre Steam sono flottanti di default (popup, chat, impostazioni, negozio...)
+hl.window_rule({
+    name  = "float-steam-all",
+    match = { class = "steam" },
+    float = true,
+    size  = "800 600",
+    center = true,
+})
+
+-- Eccezione: la finestra principale del client resta tiled
+hl.window_rule({
+    name  = "tile-steam-main",
+    match = { class = "steam", title = "^Steam$" },
+    float = false,
+})
+
 -- ======================================================
 -- WORKSPACE: 1 BROWSER
 -- ======================================================
@@ -136,7 +152,7 @@ hl.window_rule({
 hl.window_rule({
     name  = "ws-gaming-steam",
     match = { class = "steam" },
-    workspace = "6 silent",
+    workspace = "6",
 })
 
 -- hl.window_rule({
@@ -157,7 +173,7 @@ hl.window_rule({
 
 hl.window_rule({
     name  = "ws-media-spotify",
-    match = { class = "Spotify" },
+    match = { class = "spotify" },
     workspace = "9",
 })
 

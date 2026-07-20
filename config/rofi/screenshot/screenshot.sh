@@ -22,21 +22,22 @@ option_4="󰑋"
 
 # Rofi CMD
 rofi_cmd() {
-rofi -theme-str "window {width: $win_width;}" \
--theme-str "listview {columns: $list_col; lines: $list_row;}" \
--theme-str 'textbox-prompt-colon {str: "";}' \
--theme-str 'element-text {horizontal-align: 0.5; vertical-align: 0.5;}' \
--dmenu \
--p "$prompt" \
--mesg "$mesg" \
--markup-rows \
--theme ${theme}
-pkill rofi
+    rofi -theme-str "window {width: $win_width;}" \
+    -theme-str "listview {columns: $list_col; lines: $list_row;}" \
+    -theme-str 'textbox-prompt-colon {str: "";}' \
+    -theme-str 'element-text {horizontal-align: 0.5; vertical-align: 0.5;}' \
+    -dmenu \
+    -p "$prompt" \
+    -mesg "$mesg" \
+    -markup-rows \
+    -theme ${theme}
+    pkill rofi
 }
 
 # Pass variables to rofi dmenu
 run_rofi() {
 echo -e "$option_1\n$option_2\n$option_3\n$option_4" | rofi_cmd
+
 }
 
 # Dirs
@@ -94,6 +95,7 @@ wf-recorder -g "$geometry" -f "$file" &
 # Execute Command
 run_cmd() {
 if [[ "$1" == '--opt1' ]]; then
+sleep 0.05
 shotnow
 elif [[ "$1" == '--opt2' ]]; then
 shotarea

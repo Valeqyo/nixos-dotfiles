@@ -131,8 +131,9 @@
     "show-passive-items": true,
     "reverse-direction": true,
     "orders": {
-      "nm-applet": 99,
-      "blueman": 98
+      "ferdium": 97,
+      "blueman": 98,
+      "nm-applet": 99
     }
   },
   "custom/notification": {
