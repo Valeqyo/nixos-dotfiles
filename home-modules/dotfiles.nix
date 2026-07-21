@@ -18,7 +18,6 @@ let
     avizo = "avizo";
     xfce4 = "xfce4";
     git = "git";
-    networkmanager-dmenu = "networkmanager-dmenu";
   };
 in
 {
