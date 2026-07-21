@@ -1,7 +1,6 @@
 hl.on("hyprland.start", function () 
     -- hl.exec_cmd("blueman-applet")
     hl.exec_cmd("blueman-applet")
-    hl.exec_cmd("nm-applet")
     hl.exec_cmd("waybar")    
     hl.exec_cmd("swaync")
     hl.exec_cmd("awww-daemon")
@@ -11,6 +10,7 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("wl-clip-persist --clipboard regular")
     hl.exec_cmd("uwsm app -- hypridle")
     hl.exec_cmd("avizo-service")
-    
-    hl.exec_cmd("sleep 3 && ferdium")
+
+    hl.exec_cmd("uwsm app -- nm-applet")
+    hl.exec_cmd("sleep 2 && uwsm app -- ferdium")
 end)

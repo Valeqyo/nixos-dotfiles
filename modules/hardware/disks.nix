@@ -14,4 +14,6 @@
     fsType = "exfat";
     options = [ "users" "nofail" "x-gvfs-show" "uid=1000" ];
   };
+
+  services.udisks2.enable = true;
 }
