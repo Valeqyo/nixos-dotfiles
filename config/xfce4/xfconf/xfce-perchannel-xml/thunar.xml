@@ -18,8 +18,8 @@
   <property name="last-menubar-visible" type="bool" value="false"/>
   <property name="hidden-devices" type="array">
     <value type="string" value="5A9A48D29A48ABF7"/>
-    <value type="string" value="fb79af8c-9799-418c-8ce2-2d11fe95ca1c"/>
     <value type="string" value="14B8FDF8B8FDD866"/>
+    <value type="string" value="fb79af8c-9799-418c-8ce2-2d11fe95ca1c"/>
   </property>
   <property name="last-side-pane" type="string" value="THUNAR_SIDEPANE_TYPE_SHORTCUTS"/>
   <property name="last-renamer-dialog-maximized" type="bool" value="true"/>

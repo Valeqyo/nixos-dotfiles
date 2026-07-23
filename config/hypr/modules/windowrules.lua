@@ -105,6 +105,17 @@ hl.window_rule({
     float = false,
 })
 
+hl.window_rule({
+    name  = "float-thunar-dialogs",
+    match = {
+        class = "^Thunar$",
+        title = "negative:.* - Thunar$",
+    },
+    float  = true,
+    size   = "650 400",
+    center = true,
+})
+
 -- ======================================================
 -- WORKSPACE: 1 BROWSER
 -- ======================================================
@@ -122,6 +133,12 @@ hl.window_rule({
 hl.window_rule({
     name  = "ws-dev-vscode",
     match = { class = "code" },
+    workspace = "3",
+})
+
+hl.window_rule({
+    name  = "ws-vmware",
+    match = { class = "Vmware" },
     workspace = "3",
 })
 

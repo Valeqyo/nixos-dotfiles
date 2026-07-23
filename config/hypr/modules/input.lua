@@ -23,6 +23,10 @@ hl.gesture({
 })
 
 hl.device({
-    name        = "epic-mouse-v1",
-    sensitivity = -0.5,
+    name        = "corsair-corsair-harpoon-rgb-wireless-gaming-dongle",
+    sensitivity = -0.6,
+})
+hl.device({
+    name        = "corsair-corsair-harpoon-rgb-wireless-gaming-mouse",
+    sensitivity = -0.6,
 })

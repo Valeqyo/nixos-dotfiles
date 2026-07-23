@@ -27,6 +27,8 @@ hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | " .. clipboard .. " 
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd(screenshot))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("grim -g \"$(slurp)\" - | satty -f -"))
 
+hl.bind("SUPER + Tab", hl.dsp.exec_cmd("snappy-switcher next --mod super"))
+
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))

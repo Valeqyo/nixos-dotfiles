@@ -77,16 +77,16 @@
     //   "key": "│ \u001b[38;5;116m\u001b[39m  shell       │",
     //   "format": "{1}"
     // },
-    // {
-    //   "type": "packages",
-    //   "key": "│ \u001b[38;5;116m\u001b[39m  pkgs        │",
-    //   "format": "{nix-system} system + {nix-user} user = {all}"
-    // },
-	{
-	  "type": "command",
-	  "key": "│ \u001b[38;5;116m\u001b[39m  closure     │",
-	  "text": "cat ~/nixos-dotfiles/.closure-cache"
-	},
+    {
+      "type": "packages",
+      "key": "│ \u001b[38;5;116m\u001b[39m  pkgs        │",
+      "format": "{nix-system} system + {nix-user} user = {all}"
+    },
+	// {
+	//   "type": "command",
+	//   "key": "│ \u001b[38;5;116m\u001b[39m  closure     │",
+	//   "text": "cat ~/nixos-dotfiles/.closure-cache"
+	// },
     {
       "type": "command",
       "key": "│ \u001b[38;5;216m󰃭\u001b[39m  age         │",
