@@ -31,7 +31,7 @@
     seahorse # For keyring
     avizo # multimedia keys (OSD)
     engrampa #alternativa a xarchive
-    inputs.snappy-switcher.packages.${pkgs.system}.default # WIN + TAB
+    inputs.snappy-switcher.packages.${pkgs.system}.default # WIN + TAB 
 
     firefox
     spotify
@@ -45,6 +45,7 @@
     prismlauncher # minecraft java
     heroic
 	tldr
+	openrgb
   ];
 
   programs.vscode.enable = true;

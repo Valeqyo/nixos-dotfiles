@@ -15,7 +15,7 @@
     <value type="string" value="network:///"/>
   </property>
   <property name="last-statusbar-visible" type="bool" value="true"/>
-  <property name="last-menubar-visible" type="bool" value="false"/>
+  <property name="last-menubar-visible" type="bool" value="true"/>
   <property name="hidden-devices" type="array">
     <value type="string" value="5A9A48D29A48ABF7"/>
     <value type="string" value="14B8FDF8B8FDD866"/>

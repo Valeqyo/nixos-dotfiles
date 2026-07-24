@@ -27,8 +27,8 @@ hl.config({
 
         shadow = {
             enabled      = true,
-            range        = 20,
-            render_power = 4,
+            range        = 15,
+            render_power = 3, -- Quailtà ombra da 1 - 4
             color        = 0xee1a1a1a,
          -- offset       = "0 8",
         },
