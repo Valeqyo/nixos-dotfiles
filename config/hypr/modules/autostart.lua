@@ -12,5 +12,6 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("snappy-switcher --daemon")
 
     hl.exec_cmd("uwsm app -- nm-applet")
-    hl.exec_cmd("sleep 4 && uwsm app -- ferdium && uwsm app -- openrgb ")
+    hl.exec_cmd("sleep 4 && uwsm app -- ferdium")
+    hl.exec_cmd("uwsm app -- openrgb --profile \"WHITE\"")
 end)

@@ -31,7 +31,7 @@
     seahorse # For keyring
     avizo # multimedia keys (OSD)
     engrampa #alternativa a xarchive
-    inputs.snappy-switcher.packages.${pkgs.system}.default # WIN + TAB 
+    inputs.snappy-switcher.packages.${pkgs.stdenv.hostPlatform.system}.default # WIN + TAB 
 
     firefox
     spotify
@@ -45,7 +45,12 @@
     prismlauncher # minecraft java
     heroic
 	tldr
-	openrgb
+	openrgb-with-all-plugins
+	gcc         # il compilatore C
+	gdb         # debugger, per capire cosa fa il programma in memoria
+	# gnumake     # per usare i Makefile (utile su progetti più grandi)
+	# valgrind    # trova bug di memoria, molto usato anche in security
+	# binutils    # objdump e altri tool per guardare l'assembly
   ];
 
   programs.vscode.enable = true;

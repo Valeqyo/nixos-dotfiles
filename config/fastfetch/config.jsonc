@@ -33,7 +33,7 @@
     {
       "type": "os",
       "key": "│ \u001b[38;5;183m\u001b[39m  distro      │",
-      "format": "{4}-btw"
+      "format": "{3}" //4
     },
     {
       "type": "host",
@@ -62,11 +62,11 @@
       "key": "│ \u001b[38;5;183m\u001b[39m  cpu         │",
       "format": "{1}"
     },
-    {
-      "type": "de",
-      "key": "│ \u001b[38;5;116m\u001b[39m  de          │",
-      "format": "{2}"
-    },
+    // {
+    //   "type": "de",
+    //   "key": "│ \u001b[38;5;116m\u001b[39m  de          │",
+    //   "format": "{2}"
+    // },
     {
       "type": "wm",
       "key": "│ \u001b[38;5;116m\u001b[39m  wm          │",
@@ -82,11 +82,6 @@
       "key": "│ \u001b[38;5;116m\u001b[39m  pkgs        │",
       "format": "{nix-system} system + {nix-user} user = {all}"
     },
-	// {
-	//   "type": "command",
-	//   "key": "│ \u001b[38;5;116m\u001b[39m  closure     │",
-	//   "text": "cat ~/nixos-dotfiles/.closure-cache"
-	// },
     {
       "type": "command",
       "key": "│ \u001b[38;5;216m󰃭\u001b[39m  age         │",

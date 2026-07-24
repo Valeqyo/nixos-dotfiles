@@ -14,5 +14,4 @@ alias clear="clear && fastfetch"
 function up
     git -C ~/nixos-dotfiles add .
     sudo nixos-rebuild switch --flake ~/nixos-dotfiles#nixos-btw
-    # ~/nixos-dotfiles/scripts/fastfetch-closure >/dev/null
 end
