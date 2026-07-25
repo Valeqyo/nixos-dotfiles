@@ -16,6 +16,7 @@
          "window.menuBarVisibility" = "visible";
          "explorer.confirmDelete" = false;
          "chat.viewSessions.enabled" = false;
+         "editor.scrollOnMiddleClick" = true;
       };
     };
   };

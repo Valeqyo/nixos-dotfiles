@@ -17,6 +17,7 @@
 	  
       extraConfig = {
         XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/Pictures/screenshots";
+        XDG_RECORDINGS_DIR = "${config.home.homeDirectory}/Videos/recordings";
       };
 
       createDirectories = true;
