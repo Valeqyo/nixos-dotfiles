@@ -52,15 +52,15 @@
       "format": "{2}"
     },
     {
+      "type": "cpu",
+      "key": "│ \u001b[38;5;183m\u001b[39m  cpu         │",
+      "format": "{1}"
+    },
+    {
       "type": "gpu",
       "key": "│ \u001b[38;5;183m󰢮\u001b[39m  gpu         │",
       "hideType": "integrated",
       "format": "{2}"
-    },
-    {
-      "type": "cpu",
-      "key": "│ \u001b[38;5;183m\u001b[39m  cpu         │",
-      "format": "{1}"
     },
     // {
     //   "type": "de",

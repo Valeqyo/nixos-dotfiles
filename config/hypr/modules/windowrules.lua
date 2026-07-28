@@ -108,7 +108,7 @@ hl.window_rule({
 hl.window_rule({
     name  = "float-thunar-dialogs",
     match = {
-        class = "^Thunar$",
+        class = "^thunar$",
         title = "negative:.* - Thunar$",
     },
     float  = true,

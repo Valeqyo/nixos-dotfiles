@@ -1,6 +1,5 @@
 local terminal    = "kitty"
 local fileManager = "thunar"
-local browser     = "firefox"
 local menu        = "~/.config/rofi/type-3/launcher.sh"
 local clipboard   = "~/.config/rofi/clipboard/launcher.sh"
 local screenshot   = "~/.config/rofi/screenshot/screenshot.sh"
@@ -21,7 +20,6 @@ hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen_state({ internal = 1, client
 
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("swaync-client -t"))
 hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("~/.config/rofi/powermenu/type-2/powermenu.sh"))
-hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | " .. clipboard .. " | cliphist decode | wl-copy"))
 
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd(screenshot))
