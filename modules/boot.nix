@@ -26,7 +26,7 @@
       enableEditor = false;
       resolution = "1920x1080";
       style = {
-        wallpapers = [ ../assets/Lowpoly_Street.png ];
+        wallpapers = [ ../assets/Lofi_Cat.png ];
         wallpaperStyle = "stretched";
         interface.brandingColor = "c4a7e7";
       };
