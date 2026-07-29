@@ -25,11 +25,11 @@
             useGlobalPkgs = true;
             useUserPackages = true;
             extraSpecialArgs = {
-                  inherit inputs;
+           	  inherit inputs;
             };
             users.comar = {
               imports = [
-                 ./home.nix
+                ./home.nix
               ];
             };
             backupFileExtension = "backup";
