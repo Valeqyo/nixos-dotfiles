@@ -159,6 +159,7 @@
     "exec-if": "which swaync-client",
     "exec": "swaync-client -swb",
     "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
     "escape": true
   },
   "custom/capslock": {
@@ -173,6 +174,7 @@
     "format": " {percentage_free}%",
     "unit": "GB",
     "tooltip": true,
-    "tooltip-format": "Used: {specific_used:.1f} GB/{specific_total:.1f} GB\nFree: {specific_free:.1f} GB"
+    "tooltip-format": "Used: {specific_used:.1f} GB/{specific_total:.1f} GB\nFree: {specific_free:.1f} GB",
+	"on-click": "gnome-disks"
   },
 }
