@@ -82,11 +82,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1782600134,
-        "narHash": "sha256-50RJgeuRNdWlOBczAI3x2ULlfiXH0f34gBn4P7RKDb0=",
+        "lastModified": 1785945209,
+        "narHash": "sha256-HiRc433ppyVtRQgKYUxxnVQd1f0gBPptJQ+pPDiNUtk=",
         "owner": "OpalAayan",
         "repo": "snappy-switcher",
-        "rev": "0957cd612fadf80fa95034515cb6fa2c163e497e",
+        "rev": "345e1504f8a6c9d7c2cc4edf8670745a4835c4ca",
         "type": "github"
       },
       "original": {
