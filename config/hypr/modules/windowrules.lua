@@ -178,6 +178,18 @@ hl.window_rule({
     workspace = "6",
 })
 
+hl.window_rule({
+    name  = "ws-gaming-minecraft-bedrock",
+    match = { class = "io.mrarm." },
+    workspace = "6",
+})
+
+hl.window_rule({
+    name  = "ws-gaming-minecraft-java",
+    match = { class = "org.prismlauncher.PrismLauncher" },
+    workspace = "6",
+})
+
 -- hl.window_rule({
 --     name  = "ws-gaming-minecraft",
 --     match = { class = "^Minecraft.*" },
