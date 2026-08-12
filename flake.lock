@@ -41,11 +41,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1785989512,
-        "narHash": "sha256-YKf+KVM0TRpWlYxu3TZt6wXaCcuT0JoFjrylyM4dNEE=",
-        "rev": "445d861c6d31b4af0c79d8d4be2331f762a361d7",
+        "lastModified": 1786430034,
+        "narHash": "sha256-1MqAfG80fHLnWolvR3ULsMsXwMKFIJaWob8OI9yRcB0=",
+        "rev": "70cc4559b10a6062b05ff1af17e0add065ccaed9",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.7006.445d861c6d31/nixexprs.tar.xz"
+        "url": "https://releases.nixos.org/nixos/26.05/nixos-26.05.7443.70cc4559b10a/nixexprs.tar.xz"
       },
       "original": {
         "id": "nixpkgs",
@@ -92,6 +92,7 @@
       "original": {
         "owner": "OpalAayan",
         "repo": "snappy-switcher",
+        "rev": "345e1504f8a6c9d7c2cc4edf8670745a4835c4ca",
         "type": "github"
       }
     },

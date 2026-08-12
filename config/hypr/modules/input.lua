@@ -24,9 +24,9 @@ hl.gesture({
 
 hl.device({
     name        = "corsair-corsair-harpoon-rgb-wireless-gaming-dongle",
-    sensitivity = -0.6,
+    sensitivity = -0.9,
 })
 hl.device({
     name        = "corsair-corsair-harpoon-rgb-wireless-gaming-mouse",
-    sensitivity = -0.6,
+    sensitivity = -0.9,
 })

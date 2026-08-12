@@ -52,6 +52,8 @@
 	# gnumake     		# per usare i Makefile (utile su progetti più grandi)
 	# valgrind    		# trova bug di memoria, molto usato anche in security
 	# binutils    		# objdump e altri tool per guardare l'assembly
+	# davinci-resolve
+	ffmpeg
   ];
 
   programs.vscode.enable = true;
