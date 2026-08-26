@@ -45,15 +45,13 @@
     prismlauncher 		# minecraft java
     mcpelauncher-ui-qt  # minecraft bedrock
     heroic
-	tldr
-	openrgb-with-all-plugins
-	gcc         		# il compilatore C
-	gdb         		# debugger, per capire cosa fa il programma in memoria
-	# gnumake     		# per usare i Makefile (utile su progetti più grandi)
-	# valgrind    		# trova bug di memoria, molto usato anche in security
-	# binutils    		# objdump e altri tool per guardare l'assembly
-	# davinci-resolve
-	ffmpeg
+    tldr
+    openrgb-with-all-plugins
+    gcc         		  # il compilatore C
+    gdb         		  # debugger, per capire cosa fa il programma in memoria
+    # gnumake     		# per usare i Makefile (utile su progetti più grandi)
+    # valgrind    		# trova bug di memoria, molto usato anche in security
+    # binutils    		# objdump e altri tool per guardare l'assembly
   ];
 
   programs.vscode.enable = true;
