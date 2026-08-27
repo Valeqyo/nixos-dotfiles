@@ -14,5 +14,7 @@
 
   services.fstrim.enable = true;
 
-  programs.gamemode.enable = true; #gamemoderun ./game
+  programs.gamemode.enable = true; # gamemoderun ./game
+								   # steam - gamemoderun %command%
+								   # gamemoderun application
 }
