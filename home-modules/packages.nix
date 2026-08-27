@@ -24,14 +24,15 @@
     hyprlock
     waybar
     starship
-    grim 				# For screenshot
+    grim 				  # For screenshot
     slurp 				# For screenshot (selettore)
     satty 				# For screenshot (modificatore)
-    wf-recorder 		# For recording
-    seahorse			# For keyring
-    avizo 				# multimedia keys (OSD)
-    engrampa 			#alternativa a xarchive
+    wf-recorder 	# For recording
+    # seahorse			# For keyring
+    avizo 				# Multimedia keys (OSD)
+    engrampa 			# Alternativa a xarchive
     inputs.snappy-switcher.packages.${pkgs.stdenv.hostPlatform.system}.default # WIN + TAB 
+    socat         # For fullscreen waybar workspace
 
     firefox
     spotify

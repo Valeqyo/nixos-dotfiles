@@ -6,6 +6,6 @@
     ./gaming.nix
     ./virtualization.nix
     ./openrgb.nix
-    ./keyd.nix
+    # ./keyd.nix
   ];
 }

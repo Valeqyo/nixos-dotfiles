@@ -112,3 +112,5 @@ tooltip {
 tooltip label {
   color: @text;
 }
+
+@import url("fullscreen.css");
