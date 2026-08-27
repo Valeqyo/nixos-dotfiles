@@ -140,7 +140,13 @@
     "icon-size": 15,
     "spacing": 10,
     "show-passive-items": false,
-    "reverse-direction": true
+    "reverse-direction": true,
+    "orders": {
+      "ferdium": 1,
+      "openrgb": 2,
+      "blueman": 3,
+      "nm-applet": 4
+    }
   },
   "custom/notification": {
     "tooltip": true,
