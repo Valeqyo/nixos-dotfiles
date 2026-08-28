@@ -35,11 +35,6 @@
         comment: Boot into Windows
         protocol: efi
         path: guid(8166987e-4647-4b7b-b22c-6e03dc8d1051):/EFI/Microsoft/Boot/bootmgfw.efi
-      
-        /openSUSE
-        comment: Boot into openSUSE (temporaneo, da rimuovere quando la elimini)
-        protocol: efi
-        path: guid(8166987e-4647-4b7b-b22c-6e03dc8d1051):/EFI/systemd/systemd-bootx64.efi
       '';
     };
     efi.canTouchEfiVariables = true;
