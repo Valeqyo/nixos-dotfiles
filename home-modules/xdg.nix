@@ -33,8 +33,8 @@
           	Hidden=true
         '';
       "autostart/OpenRGB.desktop".text = ''
-            [Desktop Entry]
-          	Hidden=true
+     		[Desktop Entry]
+		    Hidden=true
         '';
     };
   };
