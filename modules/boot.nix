@@ -34,8 +34,9 @@
         /Windows
         comment: Boot into Windows
         protocol: efi
-        path: guid(8166987e-4647-4b7b-b22c-6e03dc8d1051):/EFI/Microsoft/Boot/bootmgfw.efi
+        path: guid(90234430-13fd-4d48-92dc-11c4f2339516):/EFI/Microsoft/Boot/bootmgfw.efi
       '';
+      efiInstallAsRemovable = true;
     };
     efi.canTouchEfiVariables = true;
   };

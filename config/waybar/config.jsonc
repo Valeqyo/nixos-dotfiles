@@ -144,9 +144,10 @@
     "reverse-direction": true,
     "orders": {
       "ferdium": 1,
-      "openrgb": 2,
-      "blueman": 3,
-      "nm-applet": 4
+      "udiskie": 5,
+      "openrgb": 7,
+      "blueman": 9,
+      "nm-applet": 10
     }
   },
   "custom/notification": {
