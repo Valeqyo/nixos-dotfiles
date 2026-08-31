@@ -27,7 +27,7 @@ hl.window_rule({
 
 hl.window_rule({
     name  = "float-btop",
-    match = { class = "kitty", title = "btop" },
+    match = { class = "kitty", title = "btm" },
     float = true,
     size  = "900 600",
     center = true,
@@ -50,8 +50,8 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    name  = "float-pavucontrol",
-    match = { class = "org.pulseaudio.pavucontrol" },
+    name  = "float-pwvucontrol",
+    match = { class = "com.saivert.pwvucontrol" },
     float = true,
     size  = "800 600",
     center = true,
@@ -70,6 +70,14 @@ hl.window_rule({
     match = { class = "org.xfce.ristretto" },
     float = true,
     size  = "1000 700",
+    center = true,
+})
+
+hl.window_rule({
+    name  = "float-galculator",
+    match = { class = "galculator" },
+    float = true,
+    size  = "300 400",
     center = true,
 })
 
@@ -115,7 +123,6 @@ hl.window_rule({
     size   = "650 400",
     center = true,
 })
-
 -- ======================================================
 -- WORKSPACE: 1 BROWSER
 -- ======================================================

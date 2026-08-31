@@ -6,8 +6,8 @@
     starship
     awww
     rofi
-    btop
-    pavucontrol
+    bottom
+    pwvucontrol
     playerctl
     swaynotificationcenter
     libnotify
@@ -41,6 +41,7 @@
     mpv 				# media player
     ristretto 			# image viewer
     atril 				# pdf viewer
+    galculator
     gnome-disk-utility
     ferdium
     prismlauncher 		# minecraft java
