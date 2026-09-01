@@ -2,10 +2,13 @@
   inputs = {
     #nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nixpkgs.url = "nixpkgs/nixos-26.05";
-    snappy-switcher.url = "github:OpalAayan/snappy-switcher";
-    # snappy-switcher.url = "github:OpalAayan/snappy-switcher/345e1504f8a6c9d7c2cc4edf8670745a4835c4ca";
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    snappy-switcher.url = "github:OpalAayan/snappy-switcher";
+    wlctl = {
+      url = "github:aashish-thapa/wlctl";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

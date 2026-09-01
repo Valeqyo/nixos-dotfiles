@@ -1,5 +1,20 @@
 { pkgs, inputs, ... }:
 
+let
+  rose-pine-gtk-fixed = pkgs.rose-pine-gtk-theme.overrideAttrs (old: {
+    postInstall = (old.postInstall or "") + ''
+      chmod -R u+w $out/share/themes
+      for dir in $(find $out/share/themes -type d \( -name "gtk-3.0" -o -name "gtk-3.20" \)); do
+        if [ -f "$dir/gtk.css" ] && [ -f "$dir/gtk-dark.css" ]; then
+          tmp=$(mktemp)
+          mv "$dir/gtk.css" "$tmp"
+          mv "$dir/gtk-dark.css" "$dir/gtk.css"
+          mv "$tmp" "$dir/gtk-dark.css"
+        fi
+      done
+    '';
+  });
+in
 {
   home.packages = with pkgs; [
     fastfetch
@@ -7,16 +22,18 @@
     awww
     rofi
     bottom
-    pwvucontrol
+    ncpamixer
     playerctl
     swaynotificationcenter
     libnotify
     nwg-look
-    dracula-theme
-    rose-pine-gtk-theme
+    rose-pine-gtk-fixed # rose-pine-gtk-theme
     rose-pine-hyprcursor
     rose-pine-cursor
     rose-pine-icon-theme
+    qt6Packages.qt6ct
+    qt6Packages.qtstyleplugin-kvantum
+    rose-pine-kvantum
     cliphist
     wl-clipboard
     wl-clip-persist
@@ -33,7 +50,9 @@
     engrampa 			# Alternativa a xarchive
     inputs.snappy-switcher.packages.${pkgs.stdenv.hostPlatform.system}.default # WIN + TAB 
     socat         # For fullscreen waybar workspace
-
+	inputs.wlctl.packages.${pkgs.stdenv.hostPlatform.system}.default # nmtui
+	speedtest-cli
+	
     firefox
     spotify
     onlyoffice-desktopeditors

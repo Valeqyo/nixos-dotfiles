@@ -34,10 +34,10 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    name  = "float-nmtui",
-    match = { class = "kitty", title = "nmtui" },
+    name  = "float-wlctl",
+    match = { class = "kitty", title = "wlctl" },
     float = true,
-    size  = "800 500",
+    size  = "800 600",
     center = true,
 })
 
@@ -50,10 +50,10 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    name  = "float-pwvucontrol",
-    match = { class = "com.saivert.pwvucontrol" },
+    name  = "float-ncpamixer",
+    match = { class = "kitty", title = "ncpamixer" },
     float = true,
-    size  = "800 600",
+    size  = "800 500",
     center = true,
 })
 

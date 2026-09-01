@@ -71,7 +71,7 @@
     "tooltip-format": "{controller_alias}\t{controller_address}",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-    "on-click": "blueman-manager "
+    "on-click": "exec kitty --title=bluetui -e bluetui"
   },
   "cpu": {
     "interval": 10,
@@ -95,7 +95,7 @@
     "tooltip-format-ethernet": "{ifname} ",
     "tooltip-format-disconnected": "󰖪",
     "max-length": 50,
-    "on-click": "exec kitty --title=mntui -e nmtui",
+    "on-click": "exec kitty --title=wlctl -e wlctl",
     "on-click-right": "networkmanager_dmenu"
   },
   "clock": {
@@ -120,7 +120,7 @@
     "ignored-sinks": [
       "Easy Effects Sink"
     ],
-    "on-click": "pwvucontrol",
+    "on-click": "exec kitty --title=ncpamixer -e ncpamixer",
     "on-click-right": "~/.config/waybar/scripts/volume-control.sh mute",
     "on-scroll-up": "~/.config/waybar/scripts/volume-control.sh up",
     "on-scroll-down": "~/.config/waybar/scripts/volume-control.sh down"

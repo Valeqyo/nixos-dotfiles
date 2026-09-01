@@ -36,6 +36,19 @@
      		[Desktop Entry]
 		    Hidden=true
         '';
+      "Kvantum/rose-pine-iris".source =
+          "${pkgs.rose-pine-kvantum}/share/Kvantum/themes/rose-pine-iris";
     };
   };
+
+  home.file.".local/share/applications/wlctl.desktop".text = ''
+    [Desktop Entry]
+    Type=Application
+    Name=WiFi
+    Comment=Gestisci le connessioni WiFi
+    Exec=kitty --title=wlctl -e wlctl
+    Icon=network-wireless
+    Terminal=false
+    Categories=Network;
+  '';
 }
