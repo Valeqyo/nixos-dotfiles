@@ -14,6 +14,11 @@ let
       done
     '';
   });
+  
+  pkgs-unstable = import inputs.nixpkgs-unstable {
+    system = pkgs.stdenv.hostPlatform.system;
+    config.allowUnfree = true;
+  };
 in
 {
   home.packages = with pkgs; [
@@ -50,8 +55,8 @@ in
     engrampa 			# Alternativa a xarchive
     inputs.snappy-switcher.packages.${pkgs.stdenv.hostPlatform.system}.default # WIN + TAB 
     socat         # For fullscreen waybar workspace
-	inputs.wlctl.packages.${pkgs.stdenv.hostPlatform.system}.default # nmtui
-	speedtest-cli
+	# inputs.wlctl.packages.${pkgs.stdenv.hostPlatform.system}.default # nmtui
+	# speedtest-cli
 	
     firefox
     spotify
@@ -64,7 +69,6 @@ in
     gnome-disk-utility
     ferdium
     prismlauncher 		# minecraft java
-    mcpelauncher-ui-qt  # minecraft bedrock
     heroic
     tldr
     openrgb-with-all-plugins

@@ -41,14 +41,14 @@
     };
   };
 
-  home.file.".local/share/applications/wlctl.desktop".text = ''
-    [Desktop Entry]
-    Type=Application
-    Name=WiFi
-    Comment=Gestisci le connessioni WiFi
-    Exec=kitty --title=wlctl -e wlctl
-    Icon=network-wireless
-    Terminal=false
-    Categories=Network;
-  '';
+  # home.file.".local/share/applications/wlctl.desktop".text = ''
+  #   [Desktop Entry]
+  #   Type=Application
+  #   Name=WiFi
+  #   Comment=Gestisci le connessioni WiFi
+  #   Exec=kitty --title=wlctl -e wlctl
+  #   Icon=network-wireless
+  #   Terminal=false
+  #   Categories=Network;
+  # '';
 }
