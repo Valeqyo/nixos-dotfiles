@@ -144,6 +144,7 @@
     "reverse-direction": true,
     "orders": {
       "ferdium": 1,
+      "kdeconnect-indicator": 2,
       "udiskie": 5,
       "openrgb": 7,
       "blueman": 9,

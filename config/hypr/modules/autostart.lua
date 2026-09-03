@@ -18,4 +18,5 @@ hl.on("hyprland.start", function ()
     app("snappy-switcher --daemon")
     app("openrgb --startminimized") -- rm ~/.config/autostart/OpenRGB.desktop
     app("ferdium")
+    app("kdeconnect-indicator")
 end)

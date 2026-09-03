@@ -9,7 +9,7 @@
     powerManagement.enable = true;
     powerManagement.finegrained = false;
     open = false;
-    nvidiaSettings = true; # Nvidia settings menu
+    nvidiaSettings = false; # Nvidia settings menu
     package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
   };
 
