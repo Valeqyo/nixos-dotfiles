@@ -80,4 +80,5 @@ in
   ];
 
   programs.vscode.enable = true;
+  services.kdeconnect.enable = true;
 }

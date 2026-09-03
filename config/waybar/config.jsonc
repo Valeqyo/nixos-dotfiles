@@ -103,7 +103,7 @@
     "tooltip-format": "<tt><small>{calendar}</small></tt>",
     "calendar": {
       "format": {
-        "today": "<span color='#c4a7e7'><b>{}</b></span>"
+        "today": "<span color='#eb6f92'><b>{}</b></span>"
       }
     },
     //"on-click": "exec firefox --app=https://calendar.google.com"
