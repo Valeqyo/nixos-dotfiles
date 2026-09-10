@@ -50,13 +50,13 @@ in
     slurp 				# For screenshot (selettore)
     satty 				# For screenshot (modificatore)
     wf-recorder 	# For recording
-    # seahorse			# For keyring
+    seahorse			# For keyring
     avizo 				# Multimedia keys (OSD)
     engrampa 			# Alternativa a xarchive
     inputs.snappy-switcher.packages.${pkgs.stdenv.hostPlatform.system}.default # WIN + TAB 
     socat         # For fullscreen waybar workspace
 	# inputs.wlctl.packages.${pkgs.stdenv.hostPlatform.system}.default # nmtui
-	# speedtest-cli
+	# speedtest-cli 										       	# nmtui
 	
     firefox
     spotify
