@@ -13,5 +13,5 @@
     package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
   };
 
-  #boot.kernelParams = [ "nvidia.NVreg_PreserveVideoMemoryAllocations=1" ];
+  boot.initrd.kernelModules = [ "nvidia" ];  # Artefatti nel boot
 }
