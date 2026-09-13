@@ -57,6 +57,7 @@ in
     socat         # For fullscreen waybar workspace
 	# inputs.wlctl.packages.${pkgs.stdenv.hostPlatform.system}.default # nmtui
 	# speedtest-cli 										       	# nmtui
+	nwg-dock-hyprland
 	
     firefox
     spotify
