@@ -36,7 +36,7 @@
         protocol: efi
         path: guid(90234430-13fd-4d48-92dc-11c4f2339516):/EFI/Microsoft/Boot/bootmgfw.efi
       '';
-      efiInstallAsRemovable = true;
+      # efiInstallAsRemovable = true;
     };
     efi.canTouchEfiVariables = true;
   };
