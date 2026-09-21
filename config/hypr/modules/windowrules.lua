@@ -81,6 +81,14 @@ hl.window_rule({
     center = true,
 })
 
+hl.window_rule({
+    name  = "float-ristretto",
+    match = { class = "engrampa" },
+    float = true,
+    size  = "800 500",
+    center = true,
+})
+
 -- hl.window_rule({
 --     name  = "float-disks",
 --     match = { class = "gnome-disks" },
