@@ -1,4 +1,5 @@
-require("modules/monitors")
+-- require("modules/monitors")
+require("monitors")
 require("modules/binds")
 require("modules/autostart")
 require("modules/decoration")
