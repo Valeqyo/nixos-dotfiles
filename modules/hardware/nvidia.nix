@@ -13,5 +13,5 @@
     package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
   };
 
-  boot.initrd.kernelModules = [ "nvidia" ];  # Artefatti nel boot
+  # boot.initrd.kernelModules = [ "nvidia" ];  # Artefatti nel boot
 }
