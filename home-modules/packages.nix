@@ -73,11 +73,13 @@ in
     heroic
     tldr
     openrgb-with-all-plugins
+
     gcc         		  # il compilatore C
     gdb         		  # debugger, per capire cosa fa il programma in memoria
     # gnumake     		# per usare i Makefile (utile su progetti più grandi)
     # valgrind    		# trova bug di memoria, molto usato anche in security
     # binutils    		# objdump e altri tool per guardare l'assembly
+    octaveFull
   ];
 
   programs.vscode.enable = true;
