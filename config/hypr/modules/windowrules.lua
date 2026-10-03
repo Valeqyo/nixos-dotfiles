@@ -131,6 +131,15 @@ hl.window_rule({
     size   = "650 400",
     center = true,
 })
+
+hl.window_rule({
+    name  = "float-choose-folder",
+    match = { title = "Choose folder" },
+    float = true,
+    size  = "800 500",
+    center = true,
+})
+
 -- ======================================================
 -- WORKSPACE: 1 BROWSER
 -- ======================================================
