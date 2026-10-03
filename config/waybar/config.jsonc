@@ -184,6 +184,7 @@
     "unit": "GB",
     "tooltip": true,
     "tooltip-format": "Used: {specific_used:.1f} GB/{specific_total:.1f} GB\nFree: {specific_free:.1f} GB",
-	"on-click": "gnome-disks"
+	"on-click": "gdmap",
+	"on-click-right": "gnome-disks"
   },
 }

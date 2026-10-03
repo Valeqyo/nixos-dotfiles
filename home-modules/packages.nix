@@ -68,6 +68,7 @@ in
     atril 				# pdf viewer
     galculator
     gnome-disk-utility
+    gdmap
     ferdium
     prismlauncher 		# minecraft java
     heroic
