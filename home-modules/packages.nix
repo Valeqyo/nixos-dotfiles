@@ -60,6 +60,7 @@ in
 	nwg-displays       # Monitors settings UI
 	
     firefox
+    qutebrowser
     spotify
     onlyoffice-desktopeditors
     mousepad 			# text-editor
