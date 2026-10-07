@@ -150,6 +150,12 @@ hl.window_rule({
     workspace = "1",
 })
 
+hl.window_rule({
+    name  = "ws-browser-firefox",
+    match = { class = "org.qutebrowser.qutebrowser" },
+    workspace = "1",
+})
+
 -- ======================================================
 -- WORKSPACE: 3 DEV
 -- ======================================================
