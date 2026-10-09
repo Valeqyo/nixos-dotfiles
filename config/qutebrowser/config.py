@@ -18,8 +18,8 @@ c.tabs.show = "always"
 c.tabs.favicons.show = "always"
 c.tabs.title.format = "{audio}{current_title}"
 c.tabs.max_width = 240
-c.tabs.min_width = 80
-c.tabs.padding = {"top": 6, "bottom": 6, "left": 8, "right": 8}
+c.tabs.min_width = -1
+c.tabs.padding = {"top": 3, "bottom": 3, "left": 8, "right": 8}
 c.tabs.wrap = True
 c.tabs.mousewheel_switching = True      # rotella sulla barra = cambia scheda
 c.tabs.background = True                # click centrale = scheda in background
@@ -42,7 +42,7 @@ c.confirm_quit = ["downloads"]
 # Pagina usata quando non c'e' una sessione da ripristinare e per le schede nuove senza indirizzo
 c.url.start_pages = ["https://start.duckduckgo.com"]
 c.url.default_page = "https://start.duckduckgo.com"
-c.search.ignore_case = "always"
+c.search.ignore_case = "smart"
 c.search.incremental = True
 
 # Campi di testo: entra/esci dalla modalita' di scrittura in automatico
@@ -65,22 +65,24 @@ c.content.pdfjs = True                  # PDF aperti nel browser
 
 # ---------- Privacy e contenuti (simile alla protezione antitracciamento di Firefox) ----------
 c.content.cookies.accept = "no-3rdparty"
+# config.set("content.cookies.accept", "all", "*://*.google.com/*")
+# config.set("content.cookies.accept", "all", "*://*.youtube.com/*")
 c.content.headers.do_not_track = True
-c.content.headers.accept_language = "it-IT,it;q=0.9,en;q=0.8"
+c.content.headers.accept_language = "en-US,en;q=0.9,it;q=0.5"
 c.content.webrtc_ip_handling_policy = "default-public-interface-only"
 c.content.autoplay = False
 c.content.blocking.enabled = True
 # Per un adblock vero installa il pacchetto python "adblock" e poi decommenta:
-# c.content.blocking.method = "both"
+c.content.blocking.method = "both"
 
 # Correttore ortografico (servono i dizionari installati, vedi documentazione qutebrowser)
 # c.spellcheck.languages = ["it-IT", "en-US"]
 
 # ---------- Tema scuro sui siti ----------
 # L'interfaccia di qutebrowser e' gia' scura grazie a rosepine: qui si tratta le pagine web.
-c.colors.webpage.preferred_color_scheme = "dark"   # i siti con tema scuro nativo lo usano
-c.colors.webpage.darkmode.enabled = True           # gli altri vengono scuriti dal browser
-c.colors.webpage.darkmode.policy.images = "smart"  # scurisce le immagini solo quando serve
+c.colors.webpage.preferred_color_scheme = "dark"
+# c.colors.webpage.darkmode.enabled = True           # gli altri vengono scuriti dal browser
+# c.colors.webpage.darkmode.policy.images = "smart"  # scurisce le immagini solo quando serve
 c.colors.webpage.bg = "#191724"                    # sfondo durante il caricamento (base di rose-pine), niente lampo bianco
 # Se un sito viene male, disattivalo solo per lui, ad esempio:
 # config.set("colors.webpage.darkmode.enabled", False, "*://esempio.com/*")
@@ -157,3 +159,7 @@ bind_ff("<Ctrl-0>", "zoom")
 
 # Extra tuoi
 # config.bind(",v", "spawn mpv {url}")
+
+# Siti a cui consenti le notifiche in modo permanente
+for sito in ("ksuite.infomaniak.com", "claude.ai"):
+    config.set("content.notifications.enabled", True, f"*://{sito}/*")
