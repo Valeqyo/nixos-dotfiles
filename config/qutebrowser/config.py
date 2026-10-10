@@ -160,6 +160,9 @@ bind_ff("<Ctrl-0>", "zoom")
 # Extra tuoi
 # config.bind(",v", "spawn mpv {url}")
 
+config.bind(",p", "jseval -q document.querySelector('video')?.pause() ;; spawn mpv --wayland-app-id=mpvpip --ontop {url}")
+config.bind(",t", "jseval -q document.querySelector('video')?.pause() ;; cmd-set-text :spawn mpv --wayland-app-id=mpvpip --ontop --start=0 {url}")
+
 # Siti a cui consenti le notifiche in modo permanente
 for sito in ("ksuite.infomaniak.com", "claude.ai"):
     config.set("content.notifications.enabled", True, f"*://{sito}/*")
