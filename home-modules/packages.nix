@@ -61,6 +61,7 @@ in
 	
     firefox
     qutebrowser
+    yt-dlp      # Mi serve per pip
     spotify
     onlyoffice-desktopeditors
     mousepad 			# text-editor
