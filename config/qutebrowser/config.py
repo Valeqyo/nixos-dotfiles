@@ -19,7 +19,7 @@ c.tabs.favicons.show = "always"
 c.tabs.title.format = "{audio}{current_title}"
 c.tabs.max_width = 240
 c.tabs.min_width = -1
-c.tabs.padding = {"top": 3, "bottom": 3, "left": 8, "right": 8}
+c.tabs.padding = {"top": 3, "bottom": 3, "left": 6, "right": 6}
 c.tabs.wrap = True
 c.tabs.mousewheel_switching = True      # rotella sulla barra = cambia scheda
 c.tabs.background = True                # click centrale = scheda in background
@@ -160,8 +160,10 @@ bind_ff("<Ctrl-0>", "zoom")
 # Extra tuoi
 # config.bind(",v", "spawn mpv {url}")
 
-config.bind(",p", "jseval -q document.querySelector('video')?.pause() ;; spawn mpv --wayland-app-id=mpvpip --ontop {url}")
-config.bind(",t", "jseval -q document.querySelector('video')?.pause() ;; cmd-set-text :spawn mpv --wayland-app-id=mpvpip --ontop --start=0 {url}")
+config.bind(",p", "spawn -u pip")
+# Scambio di f e i
+config.bind("f", "mode-enter insert")   # f entra in modalità scrittura
+config.bind("i", "hint")                # i mostra gli hint sui link
 
 # Siti a cui consenti le notifiche in modo permanente
 for sito in ("ksuite.infomaniak.com", "claude.ai"):

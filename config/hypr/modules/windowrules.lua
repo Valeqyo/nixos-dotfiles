@@ -140,6 +140,23 @@ hl.window_rule({
     center = true,
 })
 
+hl.window_rule({
+    name  = "float-btop",
+    match = { class = "kitty", title = "btm" },
+    float = true,
+    size  = "900 600",
+    center = true,
+})
+
+hl.window_rule({
+    name  = "pip-mpv",
+    match = { class = "mpvpip" },
+    float = true,
+    pin   = true,
+    size  = "400 225",
+    move  = { "monitor_w - 405", "monitor_h - 230" },
+})
+
 -- ======================================================
 -- WORKSPACE: 1 BROWSER
 -- ======================================================

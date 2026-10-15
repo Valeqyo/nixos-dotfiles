@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+secs=0
+if [[ "$QUTE_TITLE" =~ ^__PIP__([0-9]+)__ ]]; then
+    secs="${BASH_REMATCH[1]}"
+fi
+
+# Ripristina subito il titolo originale della scheda
+echo 'jseval -q document.title = document.title.replace(/^__PIP__[0-9]+__/, "")' >> "$QUTE_FIFO"
+
+posfile="$(mktemp /tmp/pip-pos.XXXXXX)"
+# ... il resto dello script resta com'è
+
+# Aspetta che mpv venga chiuso (niente "&" qui)
+mpv --really-quiet --wayland-app-id=mpvpip --ontop --start="$secs" \
+    --script="$QUTE_CONFIG_DIR/mpv/pip-pos.lua" \
+    --script-opts=pip-posfile="$posfile" \
+    "$QUTE_URL" >/dev/null 2>&1
+
+pos="$(cat "$posfile" 2>/dev/null)"
+rm -f "$posfile"
+
+# Rimanda il tempo al video della pagina
+if [[ "$pos" =~ ^[0-9]+$ ]]; then
+    echo "jseval -q (document.querySelector('video').currentTime = $pos)" >> "$QUTE_FIFO"
+fi

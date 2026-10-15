@@ -6,5 +6,5 @@
 
 config_version: 2
 settings:
-  content.notifications.enabled:
-    https://ksuite.infomaniak.com: true
+  content.javascript.clipboard:
+    https://claude.ai: access-paste

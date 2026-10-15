@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Passo 1: scrive il minuto nel titolo e mette in pausa il video
+echo "jseval -q -f $QUTE_CONFIG_DIR/js/pip.js" >> "$QUTE_FIFO"
+# Passo 2: dopo mezzo secondo lancia pip-play, che legge il titolo aggiornato
+sleep 0.1
+echo "spawn -u pip-play" >> "$QUTE_FIFO"
