@@ -168,7 +168,7 @@ hl.window_rule({
 })
 
 hl.window_rule({
-    name  = "ws-browser-firefox",
+    name  = "ws-browser-qutebrowser",
     match = { class = "org.qutebrowser.qutebrowser" },
     workspace = "1",
 })

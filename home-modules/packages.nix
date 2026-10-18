@@ -58,6 +58,7 @@ in
 	# inputs.wlctl.packages.${pkgs.stdenv.hostPlatform.system}.default # nmtui
 	# speedtest-cli 										       	# nmtui
 	nwg-displays       # Monitors settings UI
+	nvd # Script update
 	
     firefox
     qutebrowser

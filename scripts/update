@@ -12,8 +12,29 @@ if git diff --quiet flake.lock; then
     exit 0
 fi
 
-echo "Rebuilding NixOS..."
+echo "Flake inputs changed:"
+git diff flake.lock | grep -E '^\+.*"(lastModified|rev)"' || true
+
+echo "Building new system..."
+nixos-rebuild build --flake .#nixos-btw
+
+echo "Package changes:"
+nvd diff /run/current-system ./result
+# alternativa senza installare nulla:
+# nix store diff-closures /run/current-system ./result
+
+read -rp "Apply update? [y/N] " ans
+if [[ "$ans" != "y" ]]; then
+    echo "Aborted, reverting flake.lock"
+    git checkout flake.lock
+    rm -f result
+    exit 0
+fi
+
+echo "Switching..."
 sudo nixos-rebuild switch --flake .#nixos-btw
+
+rm -f result
 
 echo "Saving changes..."
 git add flake.lock
