@@ -4,11 +4,20 @@ set -e
 
 cd ~/nixos-dotfiles
 
+# Se qualcosa va storto, torna allo stato precedente
+cleanup() {
+    echo "Error or interruption: reverting flake.lock"
+    git checkout flake.lock
+    rm -f result
+}
+trap cleanup ERR INT TERM
+
 echo "Updating flake..."
 nix flake update
 
 if git diff --quiet flake.lock; then
     echo "No flake updates available"
+    trap - ERR INT TERM
     exit 0
 fi
 
@@ -20,20 +29,20 @@ nixos-rebuild build --flake .#nixos-btw
 
 echo "Package changes:"
 nvd diff /run/current-system ./result
-# alternativa senza installare nulla:
-# nix store diff-closures /run/current-system ./result
 
 read -rp "Apply update? [y/N] " ans
 if [[ "$ans" != "y" ]]; then
-    echo "Aborted, reverting flake.lock"
-    git checkout flake.lock
-    rm -f result
+    echo "Aborted"
+    cleanup
+    trap - ERR INT TERM
     exit 0
 fi
 
 echo "Switching..."
 sudo nixos-rebuild switch --flake .#nixos-btw
 
+# Da qui in poi l'update è applicato: niente più revert automatico
+trap - ERR INT TERM
 rm -f result
 
 echo "Saving changes..."
