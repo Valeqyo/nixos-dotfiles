@@ -77,6 +77,7 @@ in
     heroic
     tldr
     openrgb-with-all-plugins
+    pkgs-unstable.godot
 
     gcc         		  # il compilatore C
     gdb         		  # debugger, per capire cosa fa il programma in memoria

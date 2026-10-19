@@ -141,6 +141,14 @@ hl.window_rule({
 })
 
 hl.window_rule({
+    name  = "float-choose-folder2",
+    match = { class = "xdg-desktop-portal-gtk" },
+    float = true,
+    size  = "800 500",
+    center = true,
+})
+
+hl.window_rule({
     name  = "float-btop",
     match = { class = "kitty", title = "btm" },
     float = true,
