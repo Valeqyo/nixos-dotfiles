@@ -30,6 +30,7 @@
          "explorer.confirmDelete" = false;
          "chat.viewSessions.enabled" = false;
          "editor.scrollOnMiddleClick" = true;
+         "workbench.secondarySideBar.defaultVisibility" = "hidden";
       };
     };
   };
