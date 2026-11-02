@@ -8,6 +8,8 @@
   extraGroups = [
     "wheel" # sudo
     "networkmanager"
+    "scanner" 
+    "lp"
   ];
 
   packages = with pkgs; [

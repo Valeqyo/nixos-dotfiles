@@ -59,6 +59,7 @@ in
 	# speedtest-cli 										       	# nmtui
 	nwg-displays       # Monitors settings UI
 	nvd # Script update
+	gscan2pdf # printing scanner
 	
     firefox
     qutebrowser
