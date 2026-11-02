@@ -45,7 +45,6 @@ in
     hypridle
     hyprlock
     waybar
-    starship
     grim 				  # For screenshot
     slurp 				# For screenshot (selettore)
     satty 				# For screenshot (modificatore)
