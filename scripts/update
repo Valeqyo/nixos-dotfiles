@@ -30,13 +30,24 @@ nixos-rebuild build --flake .#nixos-btw
 echo "Package changes:"
 nvd diff /run/current-system ./result
 
-read -rp "Apply update? [y/N] " ans
-if [[ "$ans" != "y" ]]; then
-    echo "Aborted"
-    cleanup
-    trap - ERR INT TERM
-    exit 0
-fi
+# read -rp "Apply update? [y/N] " ans
+# if [[ "$ans" != "y" ]]; then
+#     echo "Aborted"
+#     cleanup
+#     trap - ERR INT TERM
+#     exit 0
+# fi
+
+read -rp "Apply update? [Y/n] " ans
+case "${ans,,}" in
+    ""|y|yes) ;;  # procedi con l'update
+    *)
+        echo "Aborted"
+        cleanup
+        trap - ERR INT TERM
+        exit 0
+        ;;
+esac
 
 echo "Switching..."
 sudo nixos-rebuild switch --flake .#nixos-btw
