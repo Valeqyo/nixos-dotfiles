@@ -224,7 +224,7 @@ hl.window_rule({
 })
 
 -- ======================================================
--- WORKSPACE: 6 GAMING (futuro: Steam, Minecraft)
+-- WORKSPACE: 6/7 GAMING (futuro: Steam, Minecraft)
 -- ======================================================
 
 hl.window_rule({
@@ -249,6 +249,12 @@ hl.window_rule({
     name  = "ws-gaming-minecraft-java",
     match = { class = "org.prismlauncher.PrismLauncher" },
     workspace = "6",
+})
+
+hl.window_rule({
+    name  = "ws-steam-games",
+    match = { class = "^steam_app_.*$" },
+    workspace = "7",
 })
 
 -- hl.window_rule({
