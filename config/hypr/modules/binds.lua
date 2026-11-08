@@ -67,3 +67,17 @@ hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = tr
 hl.bind(mainMod .. " + C", hl.dsp.exec_cmd("playerctl next"),       { locked = true })
 hl.bind(mainMod .. " + X", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
+
+-- Zoom
+local MIN_ZOOM = 1.0
+local MAX_ZOOM = 5.0
+local STEP     = 0.5
+
+local function zoom(delta)
+    local current = hl.get_config("cursor.zoom_factor") or 1.0
+    current = math.max(MIN_ZOOM, math.min(MAX_ZOOM, current + delta))
+    hl.config({ cursor = { zoom_factor = current } })
+end
+
+hl.bind("SUPER + SHIFT + mouse_down", function() zoom(STEP)  end)
+hl.bind("SUPER + SHIFT + mouse_up",   function() zoom(-STEP) end)
