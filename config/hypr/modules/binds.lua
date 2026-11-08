@@ -79,5 +79,5 @@ local function zoom(delta)
     hl.config({ cursor = { zoom_factor = current } })
 end
 
-hl.bind("SUPER + SHIFT + mouse_down", function() zoom(STEP)  end)
-hl.bind("SUPER + SHIFT + mouse_up",   function() zoom(-STEP) end)
+hl.bind("SUPER + CTRL + mouse_down", function() zoom(STEP)  end)
+hl.bind("SUPER + CTRL + mouse_up",   function() zoom(-STEP) end)

@@ -74,9 +74,15 @@
                     "command": "$HOME/.config/swaync/scripts/mictoggle --silent",
                     "update-command": "$HOME/.config/swaync/scripts/mictoggle --is-muted"
                 },
+                /*{
+                     "label": "",
+                     "command": "$HOME/.config/swaync/scripts/nwg-look"
+                },*/
                 {
-                    "label": "",
-                    "command": "$HOME/.config/swaync/scripts/nwg-look"
+                    "label": "󰖔",
+                    "type": "toggle",
+                    "command": "$HOME/.config/swaync/scripts/nightlight",
+                    "update-command": "$HOME/.config/swaync/scripts/nightlight --is-running"
                 },
                 {
                     "label": "",

@@ -59,6 +59,7 @@ in
 	nwg-displays       # Monitors settings UI
 	nvd # Script update
 	gscan2pdf # printing scanner
+	hyprsunset # night light
 	
     firefox
     qutebrowser

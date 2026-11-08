@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+ACTION=""   # "on", "off", "check", o vuoto (toggle)
+TEMP=5000
+
+for arg in "$@"; do
+    case "$arg" in
+        --on) ACTION="on" ;;
+        --off) ACTION="off" ;;
+        --is-running) ACTION="check" ;;
+        --help|-h)
+            echo "Usage: $0 [--on|--off|--is-running]"
+            exit 0
+        ;;
+    esac
+done
+
+is_running() {
+    pgrep -f -- "hyprsunset -t" > /dev/null 2>&1
+}
+
+start() {
+    if is_running; then
+        return
+    fi
+    setsid -f hyprsunset -t "$TEMP" >/dev/null 2>&1
+}
+
+stop() {
+    if ! is_running; then
+        return
+    fi
+    pkill -f -- "hyprsunset -t"
+}
+
+if [[ "$ACTION" == "on" ]]; then
+    start
+elif [[ "$ACTION" == "off" ]]; then
+    stop
+elif [[ "$ACTION" == "check" ]]; then
+    if is_running; then echo true; else echo false; fi
+else
+    if is_running; then stop; else start; fi
+fi
