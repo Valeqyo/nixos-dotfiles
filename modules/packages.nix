@@ -18,4 +18,8 @@
   programs.fish.enable = true; # Lascialo per forza
   programs.thunar.enable = true;
   programs.steam.enable = true;
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "qutebrowser-3.7.0"
+  ];
 }
