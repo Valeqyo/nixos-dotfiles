@@ -62,5 +62,9 @@
     loader.timeout = 1;
   };
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # Kernel
+  boot = {
+  	# initrd.kernelModules = [ "nvidia" ];  # Artefatti nel boot
+  	kernelPackages = pkgs.linuxPackages_latest;
+  };
 }

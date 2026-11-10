@@ -12,6 +12,4 @@
     nvidiaSettings = false; # Nvidia settings menu
     package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
   };
-
-  # boot.initrd.kernelModules = [ "nvidia" ];  # Artefatti nel boot
 }
