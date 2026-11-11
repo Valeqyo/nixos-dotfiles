@@ -16,6 +16,8 @@
         "git_status": false,
     },
     "tab_bar": {
+        "show_pinned_tabs_in_separate_row": false,
+        "show": true,
         "show_tab_bar_buttons": true,
         "show_nav_history_buttons": true,
     },
@@ -34,12 +36,13 @@
     "show_completion_documentation": true,
     "show_completions_on_input": true,
     "title_bar": {
-        "show_menus": true,
+        "show_user_picture": true,
+        "show_menus": false,
         "show_worktree_name": true,
         "show_branch_name": true,
         "show_branch_status_icon": true,
-        "open_menus_on_hover": false,
-        "show_user_menu": false,
+        "open_menus_on_hover": true,
+        "show_user_menu": true,
     },
     "status_bar": {
         "show_active_file": false,
