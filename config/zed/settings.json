@@ -1,0 +1,117 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+    "outline_panel": {
+        "button": true,
+    },
+    "tabs": {
+        "close_position": "right",
+        "file_icons": true,
+        "git_status": false,
+    },
+    "tab_bar": {
+        "show_tab_bar_buttons": true,
+        "show_nav_history_buttons": true,
+    },
+    "debugger": {
+        "button": true,
+    },
+    "search": {
+        "button": true,
+    },
+    "diagnostics": {
+        "button": true,
+    },
+    "project_panel": {
+        "button": true,
+    },
+    "show_completion_documentation": true,
+    "show_completions_on_input": true,
+    "title_bar": {
+        "show_menus": true,
+        "show_worktree_name": true,
+        "show_branch_name": true,
+        "show_branch_status_icon": true,
+        "open_menus_on_hover": false,
+        "show_user_menu": false,
+    },
+    "status_bar": {
+        "show_active_file": false,
+        "line_endings_button": false,
+        "cursor_position_button": true,
+        "active_language_button": true,
+        "pending_keystrokes_indicator": true,
+    },
+    "toolbar": {
+        "selections_menu": true,
+    },
+    "middle_click_paste": false,
+    "tab_size": 4,
+    "minimap": {
+        "max_width_columns": 80,
+        "thumb_border": "none",
+        "thumb": "always",
+        "show": "auto",
+    },
+    "scrollbar": {
+        "selected_symbol": true,
+        "selected_text": true,
+        "search_results": true,
+        "git_diff": true,
+        "cursors": true,
+        "show": "auto",
+    },
+    "gutter": {
+        "folds": false,
+    },
+    "sticky_scroll": {
+        "enabled": false,
+    },
+    "mouse_wheel_zoom": true,
+    "icon_theme": "Colored Zed Icons Theme Dark",
+    "autosave": "off",
+    "reduce_motion": "on",
+    "hide_mouse": "never",
+    "cursor_animation": {
+        "enabled": true,
+    },
+    "markdown_preview": {
+        "font_family": "Geist",
+    },
+    "ui_font_weight": 400.0,
+    "ui_font_family": "Geist",
+    "buffer_font_family": "JetBrainsMono Nerd Font Mono",
+    "auto_update": false,
+    "telemetry": {
+        "diagnostics": false,
+        "metrics": false,
+        "anthropic_retention": false,
+    },
+    "restore_on_startup": "launchpad",
+    "session": {
+        "trust_all_worktrees": true,
+    },
+    "ui_font_size": 15.5,
+    "buffer_font_size": 14.0,
+    "languages": {
+        "Nix": {
+            "language_servers": ["nil", "!nixd"],
+            "formatter": {
+                "external": {
+                    "command": "nixfmt",
+                },
+            },
+        },
+    },
+    "theme": {
+        "mode": "system",
+        "light": "One Light",
+        "dark": "Rosé Pine",
+    },
+}

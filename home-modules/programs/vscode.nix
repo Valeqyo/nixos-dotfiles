@@ -1,3 +1,5 @@
+# Configurazione di vscode
+
 { pkgs, ... }:
 
 {

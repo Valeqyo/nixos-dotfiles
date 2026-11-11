@@ -22,6 +22,7 @@ let
     "gtk-4.0" = "gtk-4.0";
     "gtk-3.0" = "gtk-3.0";
     qutebrowser = "qutebrowser";
+    zed = "zed";
   };
 in
 {

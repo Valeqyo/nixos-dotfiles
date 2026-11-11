@@ -14,7 +14,7 @@ let
       done
     '';
   });
-  
+
   pkgs-unstable = import inputs.nixpkgs-unstable {
     system = pkgs.stdenv.hostPlatform.system;
     config.allowUnfree = true;
@@ -52,7 +52,7 @@ in
     seahorse			# For keyring
     avizo 				# Multimedia keys (OSD)
     engrampa 			# Alternativa a xarchive
-    inputs.snappy-switcher.packages.${pkgs.stdenv.hostPlatform.system}.default # WIN + TAB 
+    inputs.snappy-switcher.packages.${pkgs.stdenv.hostPlatform.system}.default # WIN + TAB
     socat         # For fullscreen waybar workspace
 	# inputs.wlctl.packages.${pkgs.stdenv.hostPlatform.system}.default # nmtui
 	# speedtest-cli 										       	# nmtui
@@ -60,13 +60,13 @@ in
 	nvd # Script update
 	gscan2pdf # printing scanner
 	hyprsunset # night light
-	
+
     firefox
     qutebrowser
     yt-dlp      # Mi serve per pip
     spotify
     onlyoffice-desktopeditors
-    mousepad 			# text-editor
+    # mousepad 			# text-editor
     mpv 				# media player
     ristretto 			# image viewer
     atril 				# pdf viewer
@@ -79,6 +79,9 @@ in
     tldr
     openrgb-with-all-plugins
     pkgs-unstable.godot
+    pkgs-unstable.zed-editor
+    pkgs-unstable.nil
+    pkgs-unstable.nixfmt
 
     gcc         		  # il compilatore C
     gdb         		  # debugger, per capire cosa fa il programma in memoria
@@ -88,9 +91,9 @@ in
     octaveFull
   ];
 
-  programs.vscode = {
-    enable = true;
-    package = pkgs-unstable.vscode;
-  };
+  # programs.vscode = {
+  #   enable = true;
+  #   package = pkgs-unstable.vscode;
+  # };
   services.kdeconnect.enable = true;
 }

@@ -192,6 +192,12 @@ hl.window_rule({
 })
 
 hl.window_rule({
+    name  = "ws-dev-zed",
+    match = { class = "dev.zed.Zed" },
+    workspace = "3",
+})
+
+hl.window_rule({
     name  = "ws-dev-godot",
     match = { class = "Godot" },
     workspace = "3",
