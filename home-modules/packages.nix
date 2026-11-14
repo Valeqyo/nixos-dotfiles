@@ -79,9 +79,11 @@ in
     tldr
     openrgb-with-all-plugins
     pkgs-unstable.godot
+
     pkgs-unstable.zed-editor
     pkgs-unstable.nil
     pkgs-unstable.nixfmt
+    pkgs-unstable.clang-tools
 
     gcc         		  # il compilatore C
     gdb         		  # debugger, per capire cosa fa il programma in memoria
