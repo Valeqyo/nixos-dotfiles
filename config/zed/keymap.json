@@ -1,0 +1,8 @@
+[
+//   {
+//     "context": "Workspace",
+//     "bindings": {
+//       "f6": ["task::Spawn", { "task_name": "Compila ed esegui" }]
+//     }
+//   }
+]

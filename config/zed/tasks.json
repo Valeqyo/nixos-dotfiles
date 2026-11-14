@@ -1,0 +1,7 @@
+[
+  {
+    "label": "Compila ed esegui c",
+    "command": "gcc -Wall -g \"$ZED_FILE\" -o \"$ZED_STEM\" && \"./$ZED_STEM\"",
+    "cwd": "$ZED_DIRNAME"
+  }
+]
