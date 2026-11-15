@@ -81,9 +81,9 @@ in
     pkgs-unstable.godot
 
     pkgs-unstable.zed-editor
-    pkgs-unstable.nil
-    pkgs-unstable.nixfmt
-    pkgs-unstable.clang-tools
+    pkgs-unstable.nil # nix
+    pkgs-unstable.nixfmt # nix
+    pkgs-unstable.clang-tools # c
 
     gcc         		  # il compilatore C
     gdb         		  # debugger, per capire cosa fa il programma in memoria
